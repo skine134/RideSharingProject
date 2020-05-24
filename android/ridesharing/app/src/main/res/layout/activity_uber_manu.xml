@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".uber_menu"
+    android:layout_margin="10dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="우버용"
+        android:textSize="80dp"
+        android:gravity="center_horizontal"
+        />
+
+    <Button
+        android:id="@+id/btn1"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="출근 가능 여부 확인"
+        android:textSize="40dp"
+        android:layout_gravity="center_horizontal"
+        />
+
+    <Button
+        android:id="@+id/btn2"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="택배물 조회"
+        android:textSize="40dp"
+        android:layout_gravity="center_horizontal"
+        />
+
+    <Button
+        android:id="@+id/btn3"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="배송 확인 체크"
+        android:textSize="40dp"
+        android:layout_gravity="center_horizontal"
+        />
+
+
+
+</LinearLayout>

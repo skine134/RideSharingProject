@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/total_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical"
+    tools:ignore="MissingDefaultResource">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="종합 조회"
+        android:textSize="20sp"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <Button
+            android:id="@+id/commuter"
+            android:layout_width="130sp"
+            android:layout_height="wrap_content"
+            android:text="출근자 조회"
+            android:textSize="20sp" />
+        <Button
+            android:id="@+id/edit"
+            android:layout_toRightOf="@+id/commuter"
+            android:layout_width="80sp"
+            android:layout_height="wrap_content"
+            android:text="편집"
+            android:textSize="20sp" />
+        <Button
+            android:id="@+id/all_select"
+            android:layout_alignParentRight="true"
+            android:layout_width="100sp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|right"
+            android:text="일괄선택"
+            android:textSize="20sp" />
+
+
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_margin="5dp"
+        android:contextClickable="false">
+
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="261dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text='텍스트를 입력해주세요' />
+
+        <Button
+            android:id="@+id/commuter4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="검색"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+</LinearLayout>

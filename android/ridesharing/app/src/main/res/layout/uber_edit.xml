@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="출근자 목록"
+        android:textSize="80dp"
+        android:layout_gravity="center_horizontal"
+        />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="500dp" >
+        <LinearLayout
+            android:id="@+id/manList"
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:orientation="vertical" />
+    </ScrollView>
+    <LinearLayout
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        >
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="뒤로가기"/>
+
+        <Button
+            android:id="@+id/button1_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="추가 출근자"
+            />
+    </LinearLayout>
+
+
+
+</LinearLayout>

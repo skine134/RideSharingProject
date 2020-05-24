@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="우버용"
+        android:textSize="80dp"
+        android:gravity="center_horizontal"
+        />
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="350dp" >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="서명해주세요"
+            android:textSize="30dp"
+            android:textColor="@android:color/darker_gray"
+            android:gravity="center" />
+
+        <com.github.gcacace.signaturepad.views.SignaturePad
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/signature_pad"
+            />
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        >
+        <Button
+            android:id="@+id/btnOk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="확인"
+            android:textSize="40dp"
+            android:gravity="center"/>
+
+        <Button
+            android:id="@+id/btnCsl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="취소"
+            android:textSize="40dp"
+            android:gravity="center"
+            android:layout_marginLeft="50dp"/>
+    </LinearLayout>
+
+
+
+</LinearLayout>
