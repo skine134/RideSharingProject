@@ -1,0 +1,481 @@
+		
+		bricks.add(0,new brick());
+		bricks.get(0).setX(10+50*0);
+		bricks.get(0).setY(400);
+		bricks.get(0).setCollision(b);
+		bricks_th.add(0,new Thread(bricks.get(0).th));
+		bricks.get(0).getPan().setSize(bricks.get(0).getSize_x(),bricks.get(0).getSize_y());
+		bricks.get(0).getPan().setLocation(bricks.get(0).getX(),bricks.get(0).getY());
+		bricks.get(0).setBrick_image("images\\Block\\Block_green.png");
+		
+		
+		bricks.add(0,new brick());
+		bricks.get(0).setX(60+50*0);
+		bricks.get(0).setY(380);
+		bricks.get(0).setCollision(b);
+		bricks_th.add(0,new Thread(bricks.get(0).th));
+		bricks.get(0).getPan().setSize(bricks.get(0).getSize_x(),bricks.get(0).getSize_y());
+		bricks.get(0).getPan().setLocation(bricks.get(0).getX(),bricks.get(0).getY());
+		bricks.get(0).setBrick_image("images\\Block\\Block_green.png");
+		
+		bricks.add(0,new brick());
+		bricks.get(0).setX(110+50*0);
+		bricks.get(0).setY(360);
+		bricks.get(0).setCollision(b);
+		bricks_th.add(0,new Thread(bricks.get(0).th));
+		bricks.get(0).getPan().setSize(bricks.get(0).getSize_x(),bricks.get(0).getSize_y());
+		bricks.get(0).getPan().setLocation(bricks.get(0).getX(),bricks.get(0).getY());
+		bricks.get(0).setBrick_image("images\\Block\\Block_green.png");
+		
+		bricks.add(0,new brick());
+		bricks.get(0).setX(160+50*0);
+		bricks.get(0).setY(340);
+		bricks.get(0).setCollision(b);
+		bricks_th.add(0,new Thread(bricks.get(0).th));
+		bricks.get(0).getPan().setSize(bricks.get(0).getSize_x(),bricks.get(0).getSize_y());
+		bricks.get(0).getPan().setLocation(bricks.get(0).getX(),bricks.get(0).getY());
+		bricks.get(0).setBrick_image("images\\Block\\Block_green.png");
+		
+		bricks.add(0,new brick());
+		bricks.get(0).setX(60+50*0);
+		bricks.get(0).setY(380);
+		bricks.get(0).setCollision(b);
+		bricks_th.add(0,new Thread(bricks.get(0).th));
+		bricks.get(0).getPan().setSize(bricks.get(0).getSize_x(),bricks.get(0).getSize_y());
+		bricks.get(0).getPan().setLocation(bricks.get(0).getX(),bricks.get(0).getY());
+		bricks.get(0).setBrick_image("images\\Block\\Block_green.png");
+		
+		
+		bricks.add(0,new brick());
+		bricks.get(0).setX(210+50*0);
+		bricks.get(0).setY(320);
+		bricks.get(0).setCollision(b);
+		bricks_th.add(0,new Thread(bricks.get(0).th));
+		bricks.get(0).getPan().setSize(bricks.get(0).getSize_x(),bricks.get(0).getSize_y());
+		bricks.get(0).getPan().setLocation(bricks.get(0).getX(),bricks.get(0).getY());
+		bricks.get(0).setBrick_image("images\\Block\\Block_green.png");
+		
+		bricks.add(0,new brick());
+		bricks.get(0).setX(265+50*0);
+		bricks.get(0).setY(300);
+		bricks.get(0).setCollision(b);
+		bricks_th.add(0,new Thread(bricks.get(0).th));
+		bricks.get(0).getPan().setSize(bricks.get(0).getSize_x(),bricks.get(0).getSize_y());
+		bricks.get(0).getPan().setLocation(bricks.get(0).getX(),bricks.get(0).getY());
+		bricks.get(0).setBrick_image("images\\Block\\Block_green.png");
+		
+		
+		bricks.add(0,new brick());
+		bricks.get(0).setX(215+50*0);
+		bricks.get(0).setY(280);
+		bricks.get(0).setCollision(b);
+		bricks_th.add(0,new Thread(bricks.get(0).th));
+		bricks.get(0).getPan().setSize(bricks.get(0).getSize_x(),bricks.get(0).getSize_y());
+		bricks.get(0).getPan().setLocation(bricks.get(0).getX(),bricks.get(0).getY());
+		bricks.get(0).setBrick_image("images\\Block\\Block_green.png");
+		
+		bricks.add(0,new brick());
+		bricks.get(0).setX(165+50*0);
+		bricks.get(0).setY(260);
+		bricks.get(0).setCollision(b);
+		bricks_th.add(0,new Thread(bricks.get(0).th));
+		bricks.get(0).getPan().setSize(bricks.get(0).getSize_x(),bricks.get(0).getSize_y());
+		bricks.get(0).getPan().setLocation(bricks.get(0).getX(),bricks.get(0).getY());
+		bricks.get(0).setBrick_image("images\\Block\\Block_green.png");
+		
+		bricks.add(0,new brick());
+		bricks.get(0).setX(115+50*0);
+		bricks.get(0).setY(240);
+		bricks.get(0).setCollision(b);
+		bricks_th.add(0,new Thread(bricks.get(0).th));
+		bricks.get(0).getPan().setSize(bricks.get(0).getSize_x(),bricks.get(0).getSize_y());
+		bricks.get(0).getPan().setLocation(bricks.get(0).getX(),bricks.get(0).getY());
+		bricks.get(0).setBrick_image("images\\Block\\Block_green.png");
+		
+		bricks.add(0,new brick());
+		bricks.get(0).setX(65+50*0);
+		bricks.get(0).setY(220);
+		bricks.get(0).setCollision(b);
+		bricks_th.add(0,new Thread(bricks.get(0).th));
+		bricks.get(0).getPan().setSize(bricks.get(0).getSize_x(),bricks.get(0).getSize_y());
+		bricks.get(0).getPan().setLocation(bricks.get(0).getX(),bricks.get(0).getY());
+		bricks.get(0).setBrick_image("images\\Block\\Block_green.png");
+	
+		
+		bricks.add(0,new brick());
+		bricks.get(0).setX(15+50*0);
+		bricks.get(0).setY(200);
+		bricks.get(0).setCollision(b);
+		bricks_th.add(0,new Thread(bricks.get(0).th));
+		bricks.get(0).getPan().setSize(bricks.get(0).getSize_x(),bricks.get(0).getSize_y());
+		bricks.get(0).getPan().setLocation(bricks.get(0).getX(),bricks.get(0).getY());
+		bricks.get(0).setBrick_image("images\\Block\\Block_green.png");
+		
+		
+		bricks.add(0,new brick());
+		bricks.get(0).setX(65+50*0);
+		bricks.get(0).setY(180);
+		bricks.get(0).setCollision(b);
+		bricks_th.add(0,new Thread(bricks.get(0).th));
+		bricks.get(0).getPan().setSize(bricks.get(0).getSize_x(),bricks.get(0).getSize_y());
+		bricks.get(0).getPan().setLocation(bricks.get(0).getX(),bricks.get(0).getY());
+		bricks.get(0).setBrick_image("images\\Block\\Block_green.png");
+		
+		bricks.add(0,new brick());
+		bricks.get(0).setX(115+50*0);
+		bricks.get(0).setY(160);
+		bricks.get(0).setCollision(b);
+		bricks_th.add(0,new Thread(bricks.get(0).th));
+		bricks.get(0).getPan().setSize(bricks.get(0).getSize_x(),bricks.get(0).getSize_y());
+		bricks.get(0).getPan().setLocation(bricks.get(0).getX(),bricks.get(0).getY());
+		bricks.get(0).setBrick_image("images\\Block\\Block_green.png");
+		
+		bricks.add(0,new brick());
+		bricks.get(0).setX(165+50*0);
+		bricks.get(0).setY(140);
+		bricks.get(0).setCollision(b);
+		bricks_th.add(0,new Thread(bricks.get(0).th));
+		bricks.get(0).getPan().setSize(bricks.get(0).getSize_x(),bricks.get(0).getSize_y());
+		bricks.get(0).getPan().setLocation(bricks.get(0).getX(),bricks.get(0).getY());
+		bricks.get(0).setBrick_image("images\\Block\\Block_green.png");
+		
+		////////////////////////////////////////////////////////////////////////////
+		bricks.add(0,new brick());
+		bricks.get(0).setX(215+50*0);
+		bricks.get(0).setY(80);
+		bricks.get(0).setCollision(b);
+		bricks_th.add(0,new Thread(bricks.get(0).th));
+		bricks.get(0).getPan().setSize(bricks.get(0).getSize_x(),bricks.get(0).getSize_y());
+		bricks.get(0).getPan().setLocation(bricks.get(0).getX(),bricks.get(0).getY());
+		bricks.get(0).setBrick_image("images\\Block\\Block_green.png");
+		
+		bricks.add(0,new brick());
+		bricks.get(0).setX(165+50*0);
+		bricks.get(0).setY(60);
+		bricks.get(0).setCollision(b);
+		bricks_th.add(0,new Thread(bricks.get(0).th));
+		bricks.get(0).getPan().setSize(bricks.get(0).getSize_x(),bricks.get(0).getSize_y());
+		bricks.get(0).getPan().setLocation(bricks.get(0).getX(),bricks.get(0).getY());
+		bricks.get(0).setBrick_image("images\\Block\\Block_green.png");
+		
+		bricks.add(0,new brick());
+		bricks.get(0).setX(115+50*0);
+		bricks.get(0).setY(40);
+		bricks.get(0).setCollision(b);
+		bricks_th.add(0,new Thread(bricks.get(0).th));
+		bricks.get(0).getPan().setSize(bricks.get(0).getSize_x(),bricks.get(0).getSize_y());
+		bricks.get(0).getPan().setLocation(bricks.get(0).getX(),bricks.get(0).getY());
+		bricks.get(0).setBrick_image("images\\Block\\Block_green.png");
+		
+		bricks.add(0,new brick());
+		bricks.get(0).setX(65+50*0);
+		bricks.get(0).setY(20);
+		bricks.get(0).setCollision(b);
+		bricks_th.add(0,new Thread(bricks.get(0).th));
+		bricks.get(0).getPan().setSize(bricks.get(0).getSize_x(),bricks.get(0).getSize_y());
+		bricks.get(0).getPan().setLocation(bricks.get(0).getX(),bricks.get(0).getY());
+		bricks.get(0).setBrick_image("images\\Block\\Block_green.png");
+	
+		bricks.add(0,new brick());
+		bricks.get(0).setX(15+50*0);
+		bricks.get(0).setY(5);
+		bricks.get(0).setCollision(b);
+		bricks_th.add(0,new Thread(bricks.get(0).th));
+		bricks.get(0).getPan().setSize(bricks.get(0).getSize_x(),bricks.get(0).getSize_y());
+		bricks.get(0).getPan().setLocation(bricks.get(0).getX(),bricks.get(0).getY());
+		bricks.get(0).setBrick_image("images\\Block\\Block_green.png");
+	////////////////////////////////////////////////////////////////////////////////////////////	
+		
+		
+		bricks.add(0,new brick());
+		bricks.get(0).setX(215+50*0);
+		bricks.get(0).setY(120);
+		bricks.get(0).setCollision(b);
+		bricks_th.add(0,new Thread(bricks.get(0).th));
+		bricks.get(0).getPan().setSize(bricks.get(0).getSize_x(),bricks.get(0).getSize_y());
+		bricks.get(0).getPan().setLocation(bricks.get(0).getX(),bricks.get(0).getY());
+		bricks.get(0).setBrick_image("images\\Block\\Block_green.png");
+		
+		bricks.add(0,new brick());
+		bricks.get(0).setX(265+50*0);
+		bricks.get(0).setY(100);
+		bricks.get(0).setCollision(b);
+		bricks_th.add(0,new Thread(bricks.get(0).th));
+		bricks.get(0).getPan().setSize(bricks.get(0).getSize_x(),bricks.get(0).getSize_y());
+		bricks.get(0).getPan().setLocation(bricks.get(0).getX(),bricks.get(0).getY());
+		bricks.get(0).setBrick_image("images\\Block\\Block_green.png");
+		
+		bricks.add(0,new brick());
+		bricks.get(0).setX(315+50*0);
+		bricks.get(0).setY(80);
+		bricks.get(0).setCollision(b);
+		bricks_th.add(0,new Thread(bricks.get(0).th));
+		bricks.get(0).getPan().setSize(bricks.get(0).getSize_x(),bricks.get(0).getSize_y());
+		bricks.get(0).getPan().setLocation(bricks.get(0).getX(),bricks.get(0).getY());
+		bricks.get(0).setBrick_image("images\\Block\\Block_green.png");
+		
+		bricks.add(0,new brick());
+		bricks.get(0).setX(365+50*0);
+		bricks.get(0).setY(60);
+		bricks.get(0).setCollision(b);
+		bricks_th.add(0,new Thread(bricks.get(0).th));
+		bricks.get(0).getPan().setSize(bricks.get(0).getSize_x(),bricks.get(0).getSize_y());
+		bricks.get(0).getPan().setLocation(bricks.get(0).getX(),bricks.get(0).getY());
+		bricks.get(0).setBrick_image("images\\Block\\Block_green.png");
+		
+		bricks.add(0,new brick());
+		bricks.get(0).setX(415+50*0);
+		bricks.get(0).setY(40);
+		bricks.get(0).setCollision(b);
+		bricks_th.add(0,new Thread(bricks.get(0).th));
+		bricks.get(0).getPan().setSize(bricks.get(0).getSize_x(),bricks.get(0).getSize_y());
+		bricks.get(0).getPan().setLocation(bricks.get(0).getX(),bricks.get(0).getY());
+		bricks.get(0).setBrick_image("images\\Block\\Block_green.png");
+		
+		bricks.add(0,new brick());
+		bricks.get(0).setX(465+50*0);
+		bricks.get(0).setY(20);
+		bricks.get(0).setCollision(b);
+		bricks_th.add(0,new Thread(bricks.get(0).th));
+		bricks.get(0).getPan().setSize(bricks.get(0).getSize_x(),bricks.get(0).getSize_y());
+		bricks.get(0).getPan().setLocation(bricks.get(0).getX(),bricks.get(0).getY());
+		bricks.get(0).setBrick_image("images\\Block\\Block_green.png");
+		
+		bricks.add(0,new brick());
+		bricks.get(0).setX(515+50*0);
+		bricks.get(0).setY(5);
+		bricks.get(0).setCollision(b);
+		bricks_th.add(0,new Thread(bricks.get(0).th));
+		bricks.get(0).getPan().setSize(bricks.get(0).getSize_x(),bricks.get(0).getSize_y());
+		bricks.get(0).getPan().setLocation(bricks.get(0).getX(),bricks.get(0).getY());
+		bricks.get(0).setBrick_image("images\\Block\\Block_green.png");
+		
+		
+		/////////////////////////////////////////////////////////////
+		
+		
+		bricks.add(0,new brick());
+		bricks.get(0).setX(320+50*0);
+		bricks.get(0).setY(320);
+		bricks.get(0).setCollision(b);
+		bricks_th.add(0,new Thread(bricks.get(0).th));
+		bricks.get(0).getPan().setSize(bricks.get(0).getSize_x(),bricks.get(0).getSize_y());
+		bricks.get(0).getPan().setLocation(bricks.get(0).getX(),bricks.get(0).getY());
+		bricks.get(0).setBrick_image("images\\Block\\Block_green.png");
+		
+		
+		bricks.add(0,new brick());
+		bricks.get(0).setX(370+50*0);
+		bricks.get(0).setY(340);
+		bricks.get(0).setCollision(b);
+		bricks_th.add(0,new Thread(bricks.get(0).th));
+		bricks.get(0).getPan().setSize(bricks.get(0).getSize_x(),bricks.get(0).getSize_y());
+		bricks.get(0).getPan().setLocation(bricks.get(0).getX(),bricks.get(0).getY());
+		bricks.get(0).setBrick_image("images\\Block\\Block_green.png");
+		
+		bricks.add(0,new brick());
+		bricks.get(0).setX(420+50*0);
+		bricks.get(0).setY(360);
+		bricks.get(0).setCollision(b);
+		bricks_th.add(0,new Thread(bricks.get(0).th));
+		bricks.get(0).getPan().setSize(bricks.get(0).getSize_x(),bricks.get(0).getSize_y());
+		bricks.get(0).getPan().setLocation(bricks.get(0).getX(),bricks.get(0).getY());
+		bricks.get(0).setBrick_image("images\\Block\\Block_green.png");
+		
+		bricks.add(0,new brick());
+		bricks.get(0).setX(470+50*0);
+		bricks.get(0).setY(380);
+		bricks.get(0).setCollision(b);
+		bricks_th.add(0,new Thread(bricks.get(0).th));
+		bricks.get(0).getPan().setSize(bricks.get(0).getSize_x(),bricks.get(0).getSize_y());
+		bricks.get(0).getPan().setLocation(bricks.get(0).getX(),bricks.get(0).getY());
+		bricks.get(0).setBrick_image("images\\Block\\Block_green.png");
+		
+		
+		
+		bricks.add(0,new brick());
+		bricks.get(0).setX(520+50*0);
+		bricks.get(0).setY(400);
+		bricks.get(0).setCollision(b);
+		bricks_th.add(0,new Thread(bricks.get(0).th));
+		bricks.get(0).getPan().setSize(bricks.get(0).getSize_x(),bricks.get(0).getSize_y());
+		bricks.get(0).getPan().setLocation(bricks.get(0).getX(),bricks.get(0).getY());
+		bricks.get(0).setBrick_image("images\\Block\\Block_green.png");
+		
+		
+		bricks.add(0,new brick());
+		bricks.get(0).setX(470+50*0);
+		bricks.get(0).setY(380);
+		bricks.get(0).setCollision(b);
+		bricks_th.add(0,new Thread(bricks.get(0).th));
+		bricks.get(0).getPan().setSize(bricks.get(0).getSize_x(),bricks.get(0).getSize_y());
+		bricks.get(0).getPan().setLocation(bricks.get(0).getX(),bricks.get(0).getY());
+		bricks.get(0).setBrick_image("images\\Block\\Block_green.png");
+		
+		
+		bricks.add(0,new brick());
+		bricks.get(0).setX(520+50*0);
+		bricks.get(0).setY(200);
+		bricks.get(0).setCollision(b);
+		bricks_th.add(0,new Thread(bricks.get(0).th));
+		bricks.get(0).getPan().setSize(bricks.get(0).getSize_x(),bricks.get(0).getSize_y());
+		bricks.get(0).getPan().setLocation(bricks.get(0).getX(),bricks.get(0).getY());
+		bricks.get(0).setBrick_image("images\\Block\\Block_green.png");
+		
+
+		bricks.add(0,new brick());
+		bricks.get(0).setX(470+50*0);
+		bricks.get(0).setY(220);
+		bricks.get(0).setCollision(b);
+		bricks_th.add(0,new Thread(bricks.get(0).th));
+		bricks.get(0).getPan().setSize(bricks.get(0).getSize_x(),bricks.get(0).getSize_y());
+		bricks.get(0).getPan().setLocation(bricks.get(0).getX(),bricks.get(0).getY());
+		bricks.get(0).setBrick_image("images\\Block\\Block_green.png");
+		
+		bricks.add(0,new brick());
+		bricks.get(0).setX(420+50*0);
+		bricks.get(0).setY(240);
+		bricks.get(0).setCollision(b);
+		bricks_th.add(0,new Thread(bricks.get(0).th));
+		bricks.get(0).getPan().setSize(bricks.get(0).getSize_x(),bricks.get(0).getSize_y());
+		bricks.get(0).getPan().setLocation(bricks.get(0).getX(),bricks.get(0).getY());
+		bricks.get(0).setBrick_image("images\\Block\\Block_green.png");
+		
+		bricks.add(0,new brick());
+		bricks.get(0).setX(370+50*0);
+		bricks.get(0).setY(260);
+		bricks.get(0).setCollision(b);
+		bricks_th.add(0,new Thread(bricks.get(0).th));
+		bricks.get(0).getPan().setSize(bricks.get(0).getSize_x(),bricks.get(0).getSize_y());
+		bricks.get(0).getPan().setLocation(bricks.get(0).getX(),bricks.get(0).getY());
+		bricks.get(0).setBrick_image("images\\Block\\Block_green.png");
+		
+		
+		bricks.add(0,new brick());
+		bricks.get(0).setX(320+50*0);
+		bricks.get(0).setY(280);
+		bricks.get(0).setCollision(b);
+		bricks_th.add(0,new Thread(bricks.get(0).th));
+		bricks.get(0).getPan().setSize(bricks.get(0).getSize_x(),bricks.get(0).getSize_y());
+		bricks.get(0).getPan().setLocation(bricks.get(0).getX(),bricks.get(0).getY());
+		bricks.get(0).setBrick_image("images\\Block\\Block_green.png");
+		
+		
+		bricks.add(0,new brick());
+		bricks.get(0).setX(470+50*0);
+		bricks.get(0).setY(180);
+		bricks.get(0).setCollision(b);
+		bricks_th.add(0,new Thread(bricks.get(0).th));
+		bricks.get(0).getPan().setSize(bricks.get(0).getSize_x(),bricks.get(0).getSize_y());
+		bricks.get(0).getPan().setLocation(bricks.get(0).getX(),bricks.get(0).getY());
+		bricks.get(0).setBrick_image("images\\Block\\Block_green.png");
+		
+		bricks.add(0,new brick());
+		bricks.get(0).setX(420+50*0);
+		bricks.get(0).setY(160);
+		bricks.get(0).setCollision(b);
+		bricks_th.add(0,new Thread(bricks.get(0).th));
+		bricks.get(0).getPan().setSize(bricks.get(0).getSize_x(),bricks.get(0).getSize_y());
+		bricks.get(0).getPan().setLocation(bricks.get(0).getX(),bricks.get(0).getY());
+		bricks.get(0).setBrick_image("images\\Block\\Block_green.png");
+		
+		bricks.add(0,new brick());
+		bricks.get(0).setX(370+50*0);
+		bricks.get(0).setY(140);
+		bricks.get(0).setCollision(b);
+		bricks_th.add(0,new Thread(bricks.get(0).th));
+		bricks.get(0).getPan().setSize(bricks.get(0).getSize_x(),bricks.get(0).getSize_y());
+		bricks.get(0).getPan().setLocation(bricks.get(0).getX(),bricks.get(0).getY());
+		bricks.get(0).setBrick_image("images\\Block\\Block_green.png");
+		
+		bricks.add(0,new brick());
+		bricks.get(0).setX(320+50*0);
+		bricks.get(0).setY(120);
+		bricks.get(0).setCollision(b);
+		bricks_th.add(0,new Thread(bricks.get(0).th));
+		bricks.get(0).getPan().setSize(bricks.get(0).getSize_x(),bricks.get(0).getSize_y());
+		bricks.get(0).getPan().setLocation(bricks.get(0).getX(),bricks.get(0).getY());
+		bricks.get(0).setBrick_image("images\\Block\\Block_green.png");
+		
+		///////¿À¸¥ÂÊ 
+		bricks.add(0,new brick());
+		bricks.get(0).setX(470+50*0);
+		bricks.get(0).setY(420);
+		bricks.get(0).setCollision(b);
+		bricks_th.add(0,new Thread(bricks.get(0).th));
+		bricks.get(0).getPan().setSize(bricks.get(0).getSize_x(),bricks.get(0).getSize_y());
+		bricks.get(0).getPan().setLocation(bricks.get(0).getX(),bricks.get(0).getY());
+		bricks.get(0).setBrick_image("images\\Block\\Block_green.png");
+		
+		bricks.add(0,new brick());
+		bricks.get(0).setX(420+50*0);
+		bricks.get(0).setY(440);
+		bricks.get(0).setCollision(b);
+		bricks_th.add(0,new Thread(bricks.get(0).th));
+		bricks.get(0).getPan().setSize(bricks.get(0).getSize_x(),bricks.get(0).getSize_y());
+		bricks.get(0).getPan().setLocation(bricks.get(0).getX(),bricks.get(0).getY());
+		bricks.get(0).setBrick_image("images\\Block\\Block_green.png");
+		
+		bricks.add(0,new brick());
+		bricks.get(0).setX(370+50*0);
+		bricks.get(0).setY(460);
+		bricks.get(0).setCollision(b);
+		bricks_th.add(0,new Thread(bricks.get(0).th));
+		bricks.get(0).getPan().setSize(bricks.get(0).getSize_x(),bricks.get(0).getSize_y());
+		bricks.get(0).getPan().setLocation(bricks.get(0).getX(),bricks.get(0).getY());
+		bricks.get(0).setBrick_image("images\\Block\\Block_green.png");
+		
+		bricks.add(0,new brick());
+		bricks.get(0).setX(320+50*0);
+		bricks.get(0).setY(480);
+		bricks.get(0).setCollision(b);
+		bricks_th.add(0,new Thread(bricks.get(0).th));
+		bricks.get(0).getPan().setSize(bricks.get(0).getSize_x(),bricks.get(0).getSize_y());
+		bricks.get(0).getPan().setLocation(bricks.get(0).getX(),bricks.get(0).getY());
+		bricks.get(0).setBrick_image("images\\Block\\Block_green.png");
+		
+		bricks.add(0,new brick());
+		bricks.get(0).setX(270+50*0);
+		bricks.get(0).setY(500);
+		bricks.get(0).setCollision(b);
+		bricks_th.add(0,new Thread(bricks.get(0).th));
+		bricks.get(0).getPan().setSize(bricks.get(0).getSize_x(),bricks.get(0).getSize_y());
+		bricks.get(0).getPan().setLocation(bricks.get(0).getX(),bricks.get(0).getY());
+		bricks.get(0).setBrick_image("images\\Block\\Block_green.png");
+		
+		bricks.add(0,new brick());
+		bricks.get(0).setX(220+50*0);
+		bricks.get(0).setY(480);
+		bricks.get(0).setCollision(b);
+		bricks_th.add(0,new Thread(bricks.get(0).th));
+		bricks.get(0).getPan().setSize(bricks.get(0).getSize_x(),bricks.get(0).getSize_y());
+		bricks.get(0).getPan().setLocation(bricks.get(0).getX(),bricks.get(0).getY());
+		bricks.get(0).setBrick_image("images\\Block\\Block_green.png");
+		
+		bricks.add(0,new brick());
+		bricks.get(0).setX(170+50*0);
+		bricks.get(0).setY(460);
+		bricks.get(0).setCollision(b);
+		bricks_th.add(0,new Thread(bricks.get(0).th));
+		bricks.get(0).getPan().setSize(bricks.get(0).getSize_x(),bricks.get(0).getSize_y());
+		bricks.get(0).getPan().setLocation(bricks.get(0).getX(),bricks.get(0).getY());
+		bricks.get(0).setBrick_image("images\\Block\\Block_green.png");
+		
+		bricks.add(0,new brick());
+		bricks.get(0).setX(120+50*0);
+		bricks.get(0).setY(440);
+		bricks.get(0).setCollision(b);
+		bricks_th.add(0,new Thread(bricks.get(0).th));
+		bricks.get(0).getPan().setSize(bricks.get(0).getSize_x(),bricks.get(0).getSize_y());
+		bricks.get(0).getPan().setLocation(bricks.get(0).getX(),bricks.get(0).getY());
+		bricks.get(0).setBrick_image("images\\Block\\Block_green.png");
+		
+		bricks.add(0,new brick());
+		bricks.get(0).setX(65+50*0);
+		bricks.get(0).setY(420);
+		bricks.get(0).setCollision(b);
+		bricks_th.add(0,new Thread(bricks.get(0).th));
+		bricks.get(0).getPan().setSize(bricks.get(0).getSize_x(),bricks.get(0).getSize_y());
+		bricks.get(0).getPan().setLocation(bricks.get(0).getX(),bricks.get(0).getY());
+		bricks.get(0).setBrick_image("images\\Block\\Block_green.png");
+		

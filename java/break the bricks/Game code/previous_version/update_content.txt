@@ -1,0 +1,14 @@
+ver1 : image file update
+
+ver2 : image file update and error modify
+ver3 :  add Health Point
+
+ver4 : play_Event method Correction
+
+ver5 : Correction of Collision between Character and Ball and between Block and Ball
+
+ver6 : Correction of Collision between Block and Ball
+
+ver7 : Correction of Collision between Block and Ball
+
+ver8 : add impactive music
