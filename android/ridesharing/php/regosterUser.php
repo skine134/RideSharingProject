@@ -6,6 +6,9 @@
     $table=$_POST["Table"];
     $command=$_POST["Command"];
     $contents=$_POST["Content"];
+    $changetag=$_Post["Changetag"];
+    $changeparam1=$_Post["Changeparam1"];
+    $changeparam2=$_Post["Changeparam2"];
     $do=new DbOperation();
    if($table=='Costomer'){
     		switch ($command) {
@@ -17,6 +20,13 @@
     				break;
     			case 'select':
     				$result=$do->getValueToCostomer($contents);
+    				break;
+    			case 'update':
+    				if($changetag=='postCheck')
+    				$result=$do->changepostChecktoCostomer($changeparam1,$changeparam2);
+    				else{
+    				$result=$do->changedeliveryChecktoCostomer($changeparam1,$changeparam2);
+    				}
     				break;
     			default:
     				$result="not found Costomer command";
@@ -34,6 +44,9 @@
    			case 'select':
    				$result=$do->getValueToUber($contents);
    				break;
+   			case 'update':
+    				$result=$do->changeUbertoUber($changeparam1,$changeparam2);
+    				break;
    			default:
     			$result="not found Uber command";
    				break;

@@ -35,13 +35,9 @@
          * @param [type] $postName    [description]
          * @param [type] $postNumber  [description]
          */
-        function InsertdataToCostomer($postAddress,$postEmail,$postID,$postName,$postNumber){
-            $stmt=$this->con->prepare("INSERT INTO COMSTOMERS (postAddress,postCheck,postEmail,postID,postName,postNumber) VALUE(postAddress,false,postEmail,postID,postName,postNumber)");
-            $stmt->bind_param('postAddress',$postAddress);
-            $stmt->bind_param('postEmail',$postEmail);
-            $stmt->bind_param('postID',$postID);
-            $stmt->bind_param('postName',$postName);
-            $stmt->bind_param('postNumber',$postNumber);
+        function InsertdataToCostomer($postName,$postAddress,$postNumber,$DeliverCheck,$postEmail,$ReceiverName,$ReceiverAddress,$ItemName,$ReceiverNumber,$postCheck,$Date){
+            $stmt=$this->con->prepare("INSERT INTO COMSTOMERS VALUE(?,?,?,?,?,?,?,?,?,?,?)");
+            $stmt->bind_param('ssiissssii,s',$postName,$postAddress,(int)$postNumber,(int)$DeliverCheck,$postEmail,$ReceiverName,$ReceiverAddress,$ItemName,(int)$ReceiverNumber,(int)$postCheck,$Date);
             if($stmt->execute()){
                 return true; 
             }else{
@@ -54,14 +50,14 @@
          * @return [type]              [description]
          */
         function getValueToCostomer($Costomerkey){
-            if($stmt=$this->con->prepare("SELECT * FROM COMSTOMERS WHERE postID=?")){
+            if($stmt=$this->con->prepare("SELECT * FROM COMSTOMERS WHERE postName=?")){
                 $stmt->bind_param('s',$Costomerkey);
                 $stmt->execute();
                 $result=$stmt->get_result()->fetch_assoc();
                 if($result==NULL)
                     return "sibal";
                 else
-                    return $result['postID'].",".$result['postAddress'].",".$result['postCheck'].",".$result['postEmail'].",".$result['postName'].",".$result['postNumber'];
+                    return $result['postName'].",".$result['postAddress'].",".$result['postNumber'].",".$result['DeliverCheck'].",".$result['postEmail'].",".$result['ReceiverName'].$result['ReceiverAddress'].",".$result['ItemName'].",".$result['ReceiverNumber'].",".$result['postCheck'].",".$result['Date'];
 
             }else{
                     return "\n"."error_code : ".mysqli_error($this->con) . "\n";
@@ -73,7 +69,7 @@
          */
         function DeleteToCostomer($DeleteKey){
             
-            if($stmt=$this->con->prepare("DELETE FROM COMSTOMERS WHERE postID=?")){
+            if($stmt=$this->con->prepare("DELETE FROM COMSTOMERS WHERE postName=?")){
                 $stmt->bind_param('s',$DeleteKey);
                 if($stmt->execute()){
                     return true;
@@ -86,13 +82,34 @@
              
 
             }
+        function changepostChecktoCostomer($postCheck,$ReceiverName){
+            if($stmt=$this->con->prepare("UPDATE COMSTOMERS SET postCheck=? WHERE ReceiverName=?")){
+            $stmt->bind_param('is',(int)$postCheck,$ReceiverName);
+            if($stmt->execute()){
+                return true;
+            }else{
+                return false;
+            }
+            }else{
+                    return "\n"."error_code : ".mysqli_error($this->con) . "\n";
+            }
+        }
+        function changedeliveryChecktoCostomer($DeliverCheck,$ReceiverName){
+            if($stmt=$this->con->prepare("UPDATE COMSTOMERS SET DeliverCheck=? WHERE ReceiverName=?")){
+            $stmt->bind_param('is',(int)$DeliverCheck,$ReceiverName);
+            if($stmt->execute()){
+                return true;
+            }else{
+                return false;
+            }
+            }else{
+                    return "\n"."error_code : ".mysqli_error($this->con) . "\n";
+            }
+        }
         //Item Function
-        function InsertdataToItems($itemName,$itemNumber,$Receiver,$Sender){
-            $stmt=$this->con->prepare("INSERT INTO Items (itemName,itemNumber,Receiver,Sender) VALUE(itemName,itemNumber,Receiver,Sender)");
-            $stmt->bind_param('itemName',$itemName);
-            $stmt->bind_param('itemNumber',(int)$itemNumber);
-            $stmt->bind_param('Receiver',$Receiver);
-            $stmt->bind_param('Sender',$Sender);
+        function InsertdataToItems($itemNumber,$itemName,$Sender,$Receiver,$ItemCount){
+            $stmt=$this->con->prepare("INSERT INTO Items VALUE('isssi')");
+            $stmt->bind_param('isssi',(int)$itemNumber,$itemName,$Sender,$Receiver,(int)$ItemCount);
             if($stmt->execute()){
                 return true;
             }else{
@@ -100,22 +117,22 @@
             }
         }
         function getValueToItem($ItemKey){
-            if($stmt=$this->con->prepare("SELECT * FROM ITEMS WHERE itemNumber=?")){
-                $stmt->bind_param('i',(int)$ItemKey);
+            if($stmt=$this->con->prepare("SELECT * FROM ITEMS WHERE itemName=?")){
+                $stmt->bind_param('s',$ItemKey);
                 $stmt->execute();
                 $result=$stmt->get_result()->fetch_assoc();
                 if($result==NULL)
                     return "sibal";
                 else
-                    return $result['itemName'].",".$result['itemNumber'].",".$result['Receiver'].",".$result['Sender'];
+                    return $result['itemNumber'].",".$result['itemName'].",".$result['Sender'].",".$result['Receiver'].",".$result['ItemCount'];
 
             }else{
                     return "\n"."error_code : ".mysqli_error($this->con) . "\n";
             }
         }
         function DeleteToItems($DeleteKey){
-            if($stmt=$this->con->prepare("DELETE FROM ITEMS WHERE itemNumber=?")){
-                $stmt->bind_param('i',(int)$DeleteKey);
+            if($stmt=$this->con->prepare("DELETE FROM ITEMS WHERE itemName=?")){
+                $stmt->bind_param('s',$DeleteKey);
                 if($stmt->execute()){
                     return true;
                 }else{
@@ -128,15 +145,9 @@
         }
 
         //Uber Function
-        function InsertdataToUber($DeliverCheck,$Item,$ITemNumber,$ReceiverAddress,$ReceiverName,$ReceiverNumber,$SenderAddress){
-            $stmt=$this->con->prepare("INSERT INTO UBER (DeliverCheck,Item,ITemNumber,ReceiverAddress,ReceiverName,ReceiverNumber,SenderAddress) VALUE(DeliverCheck,Item,ITemNumber,ReceiverAddress,ReceiverName,ReceiverNumber,SenderAddress)");
-            $stmt->bind_param('DeliverCheck',$DeliverCheck);
-            $stmt->bind_param('Item',$Item);
-            $stmt->bind_param('ITemNumber',$ITemNumber);
-            $stmt->bind_param('ReceiverAddress',$ReceiverAddress);
-            $stmt->bind_param('ReceiverName',$ReceiverName);
-            $stmt->bind_param('ReceiverNumber',$ReceiverNumber);
-            $stmt->bind_param('SenderAddress',$SenderAddress);
+        function InsertdataToUber($ReceiverName,$ReceiverNumber,$ReceiverAddress,$Item,$SenderAddress,$SenderNumber,$DeliverCheck,$UberId,$UberName,$postCheck){
+            $stmt=$this->con->prepare("INSERT INTO UBER  VALUE?,?,?,?,?,?,?,?,?,?)");
+            $stmt->bind_param('s,i,s,s,s,i,i,s,i',$ReceiverName,(int)$ReceiverNumber,$ReceiverAddress,$Item,$SenderAddress,(int)$SenderNumber,(int)$DeliverCheck,$UberId,$UberName,(int)$postCheck);
             if($stmt->execute()){
                 return true;
             }else{
@@ -151,15 +162,15 @@
                 if($result==NULL)
                     return "sibal";
                 else
-                    return $result['DeliverCheck'].",".$result['Item'].",".$result['ITemNumber'].",".$result['ReceiverAddress'].",".$result['ReceiverName'].",".$result['ReceiverNumber'].",".$result['SenderAddress'];
+                    return $result['ReceiverName'].",".$result['ReceiverNumber'].",".$result['ReceiverAddress'].",".$result['Item'].",".$result['SenderAddress'].",".$result['SenderNumber'].",".$result['DeliverCheck'].",".$result['UberId'].",".$result['UberName'].",".$result['postCheck'];
             }else{
                     return "\n"."error_code : ".mysqli_error($this->con) . "\n";
             }
 
         }
         function DeleteToUber($DeleteKey){
-            if($stmt=$this->con->prepare("DELETE FROM UBER WHERE itemNumber=?")){
-                $stmt->bind_param('?',(int)$DeleteKey);
+            if($stmt=$this->con->prepare("DELETE FROM UBER WHERE UberId=?")){
+                $stmt->bind_param('s',$DeleteKey);
                 if($stmt->execute()){
                     return true;
                 }else{
@@ -170,6 +181,54 @@
                 }
         }
 
+        function changeUbertoUber($ChangeUberName,$UberName){
+            if($stmt=$this->con->prepare("UPDATE COMSTOMERS SET UberName=? WHERE UberName=?")){
+            $stmt->bind_param('ss',$ChangeUberName,$UberName);
+            if($stmt->execute()){
+                return true;
+            }else{
+                return false;
+            }
+            }else{
+                    return "\n"."error_code : ".mysqli_error($this->con) . "\n";
+            }
+        }
+        //User Function
+        function InsertdataToUser($userID,$userPassword,$userName,$userAge,$userAddress,$userNumber,$userEmail,$tag){
+            $stmt=$this->con->prepare("INSERT INTO USER  VALUE(?,?,?,?,?,?,?,?)");
+            $stmt->bind_param('s,s,s,i,s,i,s,i',$userID,$userPassword,$userName,(int)$userAge,$userAddress,(int)$userNumber,$userEmail,(int)$tag);
+            if($stmt->execute()){
+                return true;
+            }else{
+                return false;
+            }
+        }
+        function getValueToUser($Userkey){
+            if($stmt=$this->con->prepare("SELECT * FROM USER WHERE userID=?")){
+                $stmt->bind_param('s',$Userkey);
+                $stmt->execute();
+                $result=$stmt->get_result()->fetch_assoc();
+                if($result==NULL)
+                    return "sibal";
+                else
+                    return $result['userID'].",".$result['userPassword'].",".$result['userName'].",".$result['userAge'].",".$result['userAddress'].",".$result['userNumber'].",".$result['$userEmail'].",".$result['tag'];
+            }else{
+                    return "\n"."error_code : ".mysqli_error($this->con) . "\n";
+            }
+
+        }
+        function DeleteToUser($DeleteKey){
+            if($stmt=$this->con->prepare("DELETE FROM USER WHERE userID=?")){
+                $stmt->bind_param('s',$DeleteKey);
+                if($stmt->execute()){
+                    return true;
+                }else{
+                    return false;
+                }
+                }else{
+                    return "\n"."error_code : ".mysqli_error($this->con) . "\n";
+                }
+        }
     }
 
 ?>
