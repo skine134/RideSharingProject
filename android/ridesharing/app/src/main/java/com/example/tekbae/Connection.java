@@ -18,10 +18,16 @@ public class Connection extends AsyncTask<String,String,String> {
     String table;
     String command;
     String key;
-    public Connection(String table,String command,String key){
+    String changetag;
+    String changeparam1;
+    String changeparam2;
+    public Connection(String table,String command,String key,String changetag,String changeparam1,String changeparam2){
         this.table=table;
         this.command=command;
         this.key=key;
+        this.changetag=changetag;
+        this.changeparam1=changeparam1;
+        this.changeparam2=changeparam2;
     }
     @Override
     protected String doInBackground(String... objects) {
@@ -41,6 +47,9 @@ public class Connection extends AsyncTask<String,String,String> {
                 buffer.append("Table").append("=").append(table).append("&");                 // php 변수에 값 대입 php 변수 앞에 '$' 붙이지 않는다 변수 구분은 '&' 사용
                 buffer.append("Command").append("=").append(command).append("&");
                 buffer.append("Content").append("=").append(key).append("&");
+                buffer.append("Changetag").append("=").append(changetag).append("&");
+                buffer.append("Changeparam1").append("=").append(changeparam1).append("&");
+                buffer.append("Changeparam2").append("=").append(changeparam2).append("&");
 
                 OutputStreamWriter outStream = new OutputStreamWriter(connection.getOutputStream(), "EUC-KR");
                 PrintWriter writer = new PrintWriter(outStream);
