@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import java.util.ArrayList;
+
 public class FirstActivity extends AppCompatActivity {
 
     @Override
@@ -18,7 +20,16 @@ public class FirstActivity extends AppCompatActivity {
         Button adminButton = (Button) findViewById(R.id.adminButton);
         Button uberButton = (Button) findViewById(R.id.uberButton);
         Button smallTekbaeButton = (Button) findViewById(R.id.smallTekbaeButton);
-
+        ArrayList<String> arr=new ArrayList<String>();
+        arr.add("he");
+        arr.add("b");
+        String tmp="";
+        for(int  i=0;i<arr.size();i++){
+            tmp+=arr.get(i);
+            if(i!=arr.size()-1)
+                tmp+=",";
+        }
+        new Connection("User","Insert",tmp,null,null,null);
 
         adminButton.setOnClickListener(new View.OnClickListener() {
             @Override

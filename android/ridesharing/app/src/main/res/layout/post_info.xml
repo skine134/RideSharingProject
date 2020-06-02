@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -13,122 +13,69 @@
     >
 
 
+    //"배송자 이름","배송자 번호", "배송자 주소","물건", "수령자 주소","수령자 번호",false,false,"날짜"
     <TextView
-        android:id="@+id/userID"
+        android:id="@+id/postname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginLeft="5dp"
-
-        android:layout_marginTop="5dp"
-        android:text="아이디"
-        android:textSize="15dp"
+        android:text="배송자"
+        android:textSize="10dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/dummy"
+        android:id="@+id/postnumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginRight="5dp"
-        android:textSize="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/distance"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginRight="5dp"
-        android:text="거리"
-        android:textSize="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dummy" />
-
-    <TextView
-        android:id="@+id/userName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-
-        android:layout_marginStart="5dp"
         android:layout_marginLeft="5dp"
-        android:layout_marginTop="5dp"
-        android:text="수령자"
-        android:textSize="15dp"
-        app:layout_constraintStart_toEndOf="@+id/userID"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="배송자번호"
+        android:textSize="10dp"/>
 
     <TextView
-        android:id="@+id/userAddress"
+        android:id="@+id/postaddress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:layout_marginStart="5dp"
         android:layout_marginLeft="5dp"
-
-        android:layout_marginTop="5dp"
-        android:text="주소"
-        android:textSize="15dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userID" />
-
+        android:text="배송자주소"
+        android:textSize="10dp"/>
     <TextView
-        android:id="@+id/userNumber"
+        android:id="@+id/thing"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginLeft="5dp"
-
-        android:layout_marginTop="5dp"
-        android:text="전화번호"
-        android:textSize="15dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userAddress" />
-
-    <TextView
-        android:id="@+id/postInfo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginLeft="5dp"
-
-        android:layout_marginTop="5dp"
         android:text="택배물"
-        android:textSize="15dp"
-        app:layout_constraintStart_toEndOf="@+id/userName"
+        android:textSize="10dp"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/receiveraddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:text="수령자 주소"
+        android:textSize="10dp"/>
+
+    <TextView
+        android:id="@+id/receivernumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:text="수령자 번호"
+        android:textSize="10dp"/>
 
     <CheckBox
-        android:id="@+id/postCheck"
+        android:id="@+id/deliverycheck"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginRight="5dp"
-        android:checked="false"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/distance" />
+        android:text="배달 가능"
+        android:textSize="8dp" />
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="58dp"
-        android:layout_height="32dp"
-        android:layout_marginTop="11dp"
-        android:text="배송완료"
-        app:layout_constraintEnd_toStartOf="@+id/postCheck"
-        app:layout_constraintTop_toBottomOf="@+id/distance" />
+    <CheckBox
+        android:id="@+id/postcheck"
+        android:layout_width="73dp"
+        android:layout_height="wrap_content"
+        android:text="배달 완료"
+        android:textSize="8dp" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

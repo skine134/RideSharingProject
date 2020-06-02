@@ -33,13 +33,17 @@
         
         
         function InsertdataToCostomer($postName,$postAddress,$postNumber,$DeliverCheck,$postEmail,$ReceiverName,$ReceiverAddress,$ItemName,$ReceiverNumber,$postCheck,$Date){
-            $stmt=$this->con->prepare("INSERT INTO COMSTOMERS VALUE(?,?,?,?,?,?,?,?,?,?,?)");
+            if($stmt=$this->con->prepare("INSERT INTO COMSTOMERS VALUE(?,?,?,?,?,?,?,?,?,?,?)")){
             $stmt->bind_param('ssiissssiis',$postName,$postAddress,(int)$postNumber,(int)$DeliverCheck,$postEmail,$ReceiverName,$ReceiverAddress,$ItemName,(int)$ReceiverNumber,(int)$postCheck,$Date);
             if($stmt->execute()){
                 return true; 
             }else{
                 return false;
             }
+        }else{
+                return "\n"."error_code : ".mysqli_error($this->con) . "\n";
+
+        }
         }
 
         function getValueToCostomer($Costomerkey){
@@ -100,13 +104,17 @@
 
         //Item Function
         function InsertdataToItems($itemNumber,$itemName,$Sender,$Receiver,$ItemCount){
-            $stmt=$this->con->prepare("INSERT INTO Items VALUE('isssi')");
+            if($stmt=$this->con->prepare("INSERT INTO Items VALUE(?,?,?,?,?)")){
             $stmt->bind_param('isssi',(int)$itemNumber,$itemName,$Sender,$Receiver,(int)$ItemCount);
             if($stmt->execute()){
                 return true;
             }else{
                 return false;
             }
+        }else{
+                return "\n"."error_code : ".mysqli_error($this->con) . "\n";
+
+        }
         }
         function getValueToItem($ItemKey){
             if($stmt=$this->con->prepare("SELECT * FROM ITEMS WHERE itemName=?")){
@@ -138,24 +146,31 @@
 
 
         //Uber Function
-        function InsertdataToUber($ReceiverName,$ReceiverNumber,$ReceiverAddress,$Item,$SenderAddress,$SenderNumber,$DeliverCheck,$UberId,$UberName,$postCheck){
-            $stmt=$this->con->prepare("INSERT INTO UBER  VALUE?,?,?,?,?,?,?,?,?,?)");
-            $stmt->bind_param('s,i,s,s,s,i,i,s,i',$ReceiverName,(int)$ReceiverNumber,$ReceiverAddress,$Item,$SenderAddress,(int)$SenderNumber,(int)$DeliverCheck,$UberId,$UberName,(int)$postCheck);
+        function InsertdataToUber($ReceiverName,$ReceiverNumber,$ReceiverAddress,$Item,$SenderAddress,$SenderNumber,$DeliverCheck,$UberId,$UberName,$postCheck,$Date){
+            if($stmt=$this->con->prepare("INSERT INTO UBER(ReceiverName,ReceiverNumber,ReceiverAddress,Item,SenderAddress,SenderNumber,DeliverCheck,UberId,UberName,postCheck,Date) VALUE(?,?,?,?,?,?,?,?,?,?,?)")){
+                    $Receivernumber=(int)$ReceiverNumber;
+                    $Sendernumber=(int)$SenderNumber;
+                    $Delivercheck=(int)$DeliverCheck;
+                    $postcheck=(int)$postCheck;
+            $stmt->bind_param('sisssiissis',$ReceiverName,$Receivernumber,$ReceiverAddress,$Item,$SenderAddress,$Sendernumber,$Delivercheck,$UberId,$UberName,$postcheck,$Date);
             if($stmt->execute()){
                 return true;
             }else{
                 return false;
             }
+        }else{
+                    return "\n"."error_code : ".mysqli_error($this->con) . "\n";
+        }
         }
         function getValueToUber($Uberkey){
-            if($stmt=$this->con->prepare("SELECT * FROM UBER WHERE itemNumber=?")){
-                $stmt->bind_param('i',(int)$Uberkey);
+            if($stmt=$this->con->prepare("SELECT * FROM UBER WHERE UberName=?")){
+                $stmt->bind_param('s',$Uberkey);
                 $stmt->execute();
                 $result=$stmt->get_result()->fetch_assoc();
                 if($result==NULL)
                     return "sibal";
                 else
-                    return $result['ReceiverName'].",".$result['ReceiverNumber'].",".$result['ReceiverAddress'].",".$result['Item'].",".$result['SenderAddress'].",".$result['SenderNumber'].",".$result['DeliverCheck'].",".$result['UberId'].",".$result['UberName'].",".$result['postCheck'];
+                    return $result['ReceiverName'].",".$result['ReceiverNumber'].",".$result['ReceiverAddress'].",".$result['Item'].",".$result['SenderAddress'].",".$result['SenderNumber'].",".$result['DeliverCheck'].",".$result['UberId'].",".$result['UberName'].",".$result['postCheck'].",".$result['Date'].",".$result['No'];
             }else{
                     return "\n"."error_code : ".mysqli_error($this->con) . "\n";
             }
@@ -190,12 +205,18 @@
 
         //User Function
         function InsertdataToUser($userID,$userPassword,$userName,$userAge,$userAddress,$userNumber,$userEmail,$tag){
-            $stmt=$this->con->prepare("INSERT INTO USER  VALUE(?,?,?,?,?,?,?,?)");
-            $stmt->bind_param('s,s,s,i,s,i,s,i',$userID,$userPassword,$userName,(int)$userAge,$userAddress,(int)$userNumber,$userEmail,(int)$tag);
+            if($stmt=$this->con->prepare("INSERT INTO USER  VALUE(?,?,?,?,?,?,?,?)")){
+                $userage=(int)$userAge;
+                $usernumber=(int)$userNumber;
+                $Tag=(int)$tag;
+            $stmt->bind_param("sssisisi",$userID,$userPassword,$userName,$userage,$userAddress,$usernumber,$userEmail,$Tag);
             if($stmt->execute()){
                 return true;
             }else{
                 return false;
+            }
+        }else{
+                    return "\n"."error_code : ".mysqli_error($this->con) . "\n";
             }
         }
         function getValueToUser($Userkey){
@@ -206,7 +227,7 @@
                 if($result==NULL)
                     return "sibal";
                 else
-                    return $result['userID'].",".$result['userPassword'].",".$result['userName'].",".$result['userAge'].",".$result['userAddress'].",".$result['userNumber'].",".$result['$userEmail'].",".$result['tag'];
+                    return $result['userID'].",".$result['userPassword'].",".$result['userName'].",".$result['userAge'].",".$result['userAddress'].",".$result['userNumber'].",".$result['userEmail'].",".$result['tag'];
             }else{
                     return "\n"."error_code : ".mysqli_error($this->con) . "\n";
             }
