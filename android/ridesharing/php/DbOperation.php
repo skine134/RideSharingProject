@@ -13,6 +13,9 @@
             $this->con=$db->connect();
         }
         //declaration used function.
+        //
+        //
+        //
         //sample function.
         //function createUser($username,$pass,$email){
         //    $password=md5($pass); //CheckSum password
@@ -27,28 +30,18 @@
         //}
 
         //Costomer Function
-        /**
-         * [InsertdataToCostomer description]
-         * @param [type] $postAddress [description]
-         * @param [type] $postEmail   [description]
-         * @param [type] $postID      [description]
-         * @param [type] $postName    [description]
-         * @param [type] $postNumber  [description]
-         */
+        
+        
         function InsertdataToCostomer($postName,$postAddress,$postNumber,$DeliverCheck,$postEmail,$ReceiverName,$ReceiverAddress,$ItemName,$ReceiverNumber,$postCheck,$Date){
             $stmt=$this->con->prepare("INSERT INTO COMSTOMERS VALUE(?,?,?,?,?,?,?,?,?,?,?)");
-            $stmt->bind_param('ssiissssii,s',$postName,$postAddress,(int)$postNumber,(int)$DeliverCheck,$postEmail,$ReceiverName,$ReceiverAddress,$ItemName,(int)$ReceiverNumber,(int)$postCheck,$Date);
+            $stmt->bind_param('ssiissssiis',$postName,$postAddress,(int)$postNumber,(int)$DeliverCheck,$postEmail,$ReceiverName,$ReceiverAddress,$ItemName,(int)$ReceiverNumber,(int)$postCheck,$Date);
             if($stmt->execute()){
                 return true; 
             }else{
                 return false;
             }
         }
-        /**
-         * [getValueToCostomer description]
-         * @param  [type] $Costomerkey [description]
-         * @return [type]              [description]
-         */
+
         function getValueToCostomer($Costomerkey){
             if($stmt=$this->con->prepare("SELECT * FROM COMSTOMERS WHERE postName=?")){
                 $stmt->bind_param('s',$Costomerkey);
@@ -63,10 +56,7 @@
                     return "\n"."error_code : ".mysqli_error($this->con) . "\n";
             }
         }
-        /**
-         * [DeleteToCostomer description]
-         * @param [type] $DeleteKey [description]
-         */
+
         function DeleteToCostomer($DeleteKey){
             
             if($stmt=$this->con->prepare("DELETE FROM COMSTOMERS WHERE postName=?")){
@@ -106,6 +96,8 @@
                     return "\n"."error_code : ".mysqli_error($this->con) . "\n";
             }
         }
+
+
         //Item Function
         function InsertdataToItems($itemNumber,$itemName,$Sender,$Receiver,$ItemCount){
             $stmt=$this->con->prepare("INSERT INTO Items VALUE('isssi')");
@@ -143,6 +135,7 @@
                 }
 
         }
+
 
         //Uber Function
         function InsertdataToUber($ReceiverName,$ReceiverNumber,$ReceiverAddress,$Item,$SenderAddress,$SenderNumber,$DeliverCheck,$UberId,$UberName,$postCheck){
@@ -193,6 +186,8 @@
                     return "\n"."error_code : ".mysqli_error($this->con) . "\n";
             }
         }
+
+
         //User Function
         function InsertdataToUser($userID,$userPassword,$userName,$userAge,$userAddress,$userNumber,$userEmail,$tag){
             $stmt=$this->con->prepare("INSERT INTO USER  VALUE(?,?,?,?,?,?,?,?)");
