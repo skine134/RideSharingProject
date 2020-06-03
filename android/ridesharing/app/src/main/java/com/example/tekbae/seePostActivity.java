@@ -38,9 +38,12 @@ public class seePostActivity extends AppCompatActivity {
         //"배송자 이름","배송자 번호", "배송자 주소","물건", "수령자 주소","수령자 번호",false,false,"날짜"
         try {
            String output=new Connection("Uber","select",LoginActivity.map.get("UberName"),null,null,null).execute("http://prawnguns.dothome.co.kr/regosterUser.php?").get();
-            String[] arr=output.split(",");
-            postList.add(new Post(arr[0],Integer.parseInt(arr[1]),arr[2],arr[3],arr[4],Integer.parseInt(arr[5]),false,false,arr[9]));
-        } catch (ExecutionException e) {
+            String[] arr=output.split("/");
+            for (int i=0;i<arr.length;i++) {
+                String[] arr2 = arr[i].split(",");
+                postList.add(new Post(arr2[0], Integer.parseInt(arr2[1]), arr2[2], arr2[3], arr2[4], Integer.parseInt(arr2[5]), false, false, arr2[9]));
+            }
+            } catch (ExecutionException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {
             e.printStackTrace();

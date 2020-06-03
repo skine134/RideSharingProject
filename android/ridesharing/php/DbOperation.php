@@ -162,18 +162,47 @@
                     return "\n"."error_code : ".mysqli_error($this->con) . "\n";
         }
         }
-        function getValueToUber($Uberkey){
+        function getUbernameToUber($Uberkey){
             if($stmt=$this->con->prepare("SELECT * FROM UBER WHERE UberName=?")){
                 $stmt->bind_param('s',$Uberkey);
                 $stmt->execute();
-                $result=$stmt->get_result()->fetch_assoc();
+                $result=$stmt->get_result()->fetch_all(MYSQLI_ASSOC);//mysqli_fetch_array($stmt);
+                $str="";
+                for ($i=0; $i <count($result); $i++) { 
+                    if($i==0)
+                        $str=implode(',', $result[$i]);
+                    else
+                        $str=$str.'/'.implode(',', $result[$i]);
+                }
                 if($result==NULL)
                     return "sibal";
                 else
-                    return $result['ReceiverName'].",".$result['ReceiverNumber'].",".$result['ReceiverAddress'].",".$result['Item'].",".$result['SenderAddress'].",".$result['SenderNumber'].",".$result['DeliverCheck'].",".$result['UberId'].",".$result['UberName'].",".$result['postCheck'].",".$result['Date'].",".$result['No'];
+                    return $str;
             }else{
                     return "\n"."error_code : ".mysqli_error($this->con) . "\n";
             }
+
+        }
+        function getDateToUber($Uberkey){
+            if($stmt=$this->con->prepare("SELECT * FROM UBER WHERE Date=?")){
+                $stmt->bind_param('s',$Uberkey);
+                $stmt->execute();
+                $result=$stmt->get_result()->fetch_all(MYSQLI_ASSOC);//mysqli_fetch_array($stmt);
+                $str="";
+                for ($i=0; $i <count($result); $i++) { 
+                    if($i==0)
+                        $str=implode(',', $result[$i]);
+                    else
+                        $str=$str.'/'.implode(',', $result[$i]);
+                }
+                if($result==NULL)
+                    return "sibal";
+                else
+                    return $str;
+            }else{
+                    return "\n"."error_code : ".mysqli_error($this->con) . "\n";
+            }
+
 
         }
         function DeleteToUber($DeleteKey){

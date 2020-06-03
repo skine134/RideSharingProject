@@ -27,12 +27,13 @@
         android:layout_height="wrap_content"
         android:hint="검색" />
     <LinearLayout
+        android:id="@+id/linear"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <TextView
-            android:layout_width="275dp"
+            android:layout_width="325dp"
             android:layout_height="wrap_content"
             android:textSize="10pt"
             android:gravity="center"
@@ -40,34 +41,27 @@
             android:background="#ff8f7f"/>
 
         <TextView
-            android:layout_width="125dp"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
             android:layout_marginLeft="3pt"
             android:background="#ff8f7f"
             android:gravity="center"
             android:text="배송완료"
             android:textSize="10pt" />
     </LinearLayout>
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="5pt">
+
         <ListView
+            android:id="@+id/Items"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/Items"
+            android:layout_marginLeft="15dp"
             android:layout_marginTop="10dp"
             android:layout_marginRight="15dp"
-            android:layout_marginLeft="15dp"
-            android:dividerHeight="10dp"
-            android:divider="#d1d1d1">
+            android:divider="#d1d1d1"
+            android:dividerHeight="10dp">
 
         </ListView>
-
-    </ScrollView>
-
-
-
 
 
 </LinearLayout>
