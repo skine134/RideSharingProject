@@ -21,12 +21,15 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.concurrent.ExecutionException;
 
+//필수 변경사항(앱 가동시)
+// date_info 를 Connection 의 key 값으로 입력, 문자전송시 01032516989 -> phoneList[i] 수정
+
 public class Send_URL extends AppCompatActivity {
 
     private LinearLayout listlayout;
     private Button btnSubmmit;
     private TextView todayText;
-    private String date_text, date_info; //date_info >> key 값으로 사용, 추후 변경해주어야 함!!
+    private String date_text, date_info;
 
     private int dbSize = 12; // 데이터베이스 열 갯수
     private String[][] dbList, simpleList;
@@ -116,7 +119,7 @@ public class Send_URL extends AppCompatActivity {
                 btn[i].setId(i);
                 listlayout.addView(btn[i]);
             }
-        } else {
+        }else {
             TextView noListText = new TextView(this);
             noListText.setText(date_info+" 일에 배송할 고객이 존재하지 않습니다");
             noListText.setTextSize(25);
@@ -133,8 +136,8 @@ public class Send_URL extends AppCompatActivity {
                     String Url = "http://prawnguns.dothome.co.kr/survey.html";
                     SmsManager sms = SmsManager.getDefault();
                     for(int i=0; i<phoneList.length; i++){
-                        sms.sendTextMessage(phoneList[i], null, "input your message here, korean : 40~45 words / eng : 80~90 words", null, null);
-                        sms.sendTextMessage(phoneList[i], null, Url, null, null);
+                        sms.sendTextMessage("01032516989", null, "안녕하세요 TAKBAE 고객님, 오늘부로 00시~00시 사이에 주문하신 물품이 배송될 예정입니다.", null, null);
+                        sms.sendTextMessage("01032516989", null, Url, null, null);
                     }
 
                 }

@@ -12,6 +12,7 @@ public class check_sign extends Activity {
 
     SignaturePad signpad;
     Button btnOK, btnCANCEL;
+
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -32,6 +33,7 @@ public class check_sign extends Activity {
             public void onSigned() {
                 btnOK.setEnabled(true);
                 btnCANCEL.setEnabled(true);
+
             }
 
             @Override
