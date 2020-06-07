@@ -8,20 +8,24 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 
 public class UberListAdapter extends BaseAdapter {
 
     private Context context;
     private List<Uber> UberList;
-
     public UberListAdapter(Context context, List<Uber>UberList){
         this.context = context;
         this.UberList = UberList;
     }
 
-
+    public List<Uber> getList(){
+        return  UberList;
+    }
     @Override
     public int getCount() {
         return UberList.size();
@@ -50,15 +54,14 @@ public class UberListAdapter extends BaseAdapter {
         TextView UberName = (TextView)v.findViewById(R.id.Uber_uberName);
         TextView Date = (TextView)v.findViewById(R.id.Uber_date);
         TextView No = (TextView)v.findViewById(R.id.Uber_No);
-
-        final CheckBox DeliverCheck = (CheckBox)v.findViewById(R.id.Uber_deliverCheck);
-        final CheckBox postCheck = (CheckBox)v.findViewById(R.id.Uber_postCheck);
-
-
-
+        CheckBox DeliverCheck = (CheckBox)v.findViewById(R.id.Uber_deliverCheck);
+        CheckBox postCheck = (CheckBox)v.findViewById(R.id.Uber_postCheck);
+        final CheckBox selectCheck=(CheckBox)v.findViewById(R.id.Uber_select);
+        String receivername=UberList.get(i).getReceiverName();
         ReceiverName.setText("수령자 이름: " +UberList.get(i).getReceiverName());
         ReceiverNumber.setText("수령자 번호: "+Integer.toString(UberList.get(i).getReceiverNumber()));
         ReceiverAddress.setText("수령자 주소: "+UberList.get(i).getReceiverAddress());
+        String itemname=UberList.get(i).getItem();
         Item.setText("택배물: "+UberList.get(i).getItem());
         SenderAddress.setText("배송자 주소: "+UberList.get(i).getSenderAddress());
         SenderNumber.setText("배송자 번호: "+Integer.toString(UberList.get(i).getSenderNumber()));
@@ -68,16 +71,37 @@ public class UberListAdapter extends BaseAdapter {
         No.setText("번호: "+UberList.get(i).getNo());
         DeliverCheck.setChecked(UberList.get(i).getDeliverCheck());
         postCheck.setChecked(UberList.get(i).getPostCheck());
-
+        selectCheck.setChecked(UberList.get(i).isSelected());
         postCheck.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener(){
 
             @Override
             public void onCheckedChanged(CompoundButton arg0, boolean isChecked) {
                 if (isChecked){
+                    try {
+                       String str= new Connection("Uber","update","1","postCheck",receivername,itemname).execute("http://prawnguns.dothome.co.kr/regosterUser.php?").get();
+                        Toast.makeText(context,str,Toast.LENGTH_SHORT).show();
+                    } catch (ExecutionException e) {
+                        e.printStackTrace();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    UberList.get(i).setPostCheck(true);
+                    postCheck.setChecked(UberList.get(i).getPostCheck());
+                }
+                else{
 
-                    Toast.makeText(context.getApplicationContext(), "수령 가능", Toast.LENGTH_SHORT).show();
+                    try {
+                        String str= new Connection("Uber","update","0","postCheck",receivername,itemname).execute("http://prawnguns.dothome.co.kr/regosterUser.php?").get();
+                        Toast.makeText(context,str,Toast.LENGTH_SHORT).show();
+                    } catch (ExecutionException e) {
+                        e.printStackTrace();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
 
-                   /* postCheck.setEnabled(false);   // Will Disable checkbox*/
+                    UberList.get(i).setPostCheck(false);
+                    postCheck.setChecked(UberList.get(i).getPostCheck());
+
                 }
             }
         });
@@ -86,11 +110,34 @@ public class UberListAdapter extends BaseAdapter {
 
             @Override
             public void onCheckedChanged(CompoundButton arg0, boolean isChecked) {
+
                 if (isChecked){
+                    try {
+                        String str= new Connection("Uber","update","1","deliveryCheck",receivername,itemname).execute("http://prawnguns.dothome.co.kr/regosterUser.php?").get();
+                        Toast.makeText(context,str,Toast.LENGTH_SHORT).show();
+                    } catch (ExecutionException e) {
+                        e.printStackTrace();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
 
-                    Toast.makeText(context.getApplicationContext(), "배송 가능", Toast.LENGTH_SHORT).show();
+                    UberList.get(i).setDeliverCheck(true);
+                    postCheck.setChecked(UberList.get(i).getDeliverCheck());
 
-/*                    DeliverCheck.setEnabled(false);   // Will Disable checkbox*/
+                }
+                else{
+
+                    try {
+                        String str= new Connection("Uber","update","0","deliveryCheck",receivername,itemname).execute("http://prawnguns.dothome.co.kr/regosterUser.php?").get();
+                        Toast.makeText(context,str,Toast.LENGTH_SHORT).show();
+                    } catch (ExecutionException e) {
+                        e.printStackTrace();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+
+                    UberList.get(i).setDeliverCheck(false);
+                    postCheck.setChecked(UberList.get(i).getDeliverCheck());
                 }
             }
         });
@@ -98,12 +145,4 @@ public class UberListAdapter extends BaseAdapter {
         v.setTag(UberList.get(i).getNo());
         return v;
     }
-
-
-
-
-
-
-
-
 }

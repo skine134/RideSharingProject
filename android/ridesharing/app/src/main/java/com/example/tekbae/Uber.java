@@ -13,7 +13,7 @@ public class Uber {
     Boolean postCheck;
     String Date;
     String No;
-
+    boolean selected;
     public Uber(String ReceiverName, int ReceiverNumber, String ReceiverAddress, String Item, String SenderAddress,
         int SenderNumber, Boolean DeliverCheck, String UberId, String UberName, Boolean postCheck, String Date, String No) {
             this.ReceiverName = ReceiverName;
@@ -28,6 +28,7 @@ public class Uber {
             this.postCheck = postCheck;
             this.Date = Date;
             this.No = No;
+            selected=false;
     }
 
 
@@ -128,5 +129,13 @@ public class Uber {
 
     public void setNo(String no) {
         No = no;
+    }
+
+    public boolean isSelected() {
+        return selected;
+    }
+
+    public void setSelected(boolean selected) {
+        this.selected = selected;
     }
 }

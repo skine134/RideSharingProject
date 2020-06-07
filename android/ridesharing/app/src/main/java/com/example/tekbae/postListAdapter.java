@@ -4,10 +4,13 @@ import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import org.w3c.dom.Text;
 
 import java.util.List;
 
@@ -44,33 +47,20 @@ public class postListAdapter extends BaseAdapter {
         TextView item = (TextView)v.findViewById(R.id.thing);
         TextView receiverAddress = (TextView)v.findViewById(R.id.receiveraddress);
         TextView receiverNumber = (TextView)v.findViewById(R.id.receivernumber);
-        final CheckBox deliveryCheck = (CheckBox)v.findViewById(R.id.deliverycheck);
-        final CheckBox postCheck = (CheckBox)v.findViewById(R.id.postcheck);
+        CheckBox postCheck = (CheckBox)v.findViewById(R.id.postcheck);
+        Button deliveryCheck = (Button)v.findViewById(R.id.deliverycheck);
+        TextView date=(TextView)v.findViewById(R.id.deliverydate) ;
 
-        postName.setText(postList.get(i).getPostName());
-        postNumber.setText(postList.get(i).getPostNumber()+"");
-        postAddress.setText(postList.get(i).getPostAddress());
-        item.setText(postList.get(i).getThing());
-        receiverAddress.setText(postList.get(i).getReceiverAddress());
-        receiverNumber.setText(postList.get(i).getReceiverNumber()+"");
-        deliveryCheck.setChecked(postList.get(i).isDeliverCheck());
+
+        postName.setText("수령자 : "+postList.get(i).getPostName());
+        postNumber.setText("수령자 번호 : "+postList.get(i).getPostNumber()+"");
+        postAddress.setText("수령자 주소 : "+postList.get(i).getPostAddress());
+        item.setText("배송물 : "+postList.get(i).getThing());
+        receiverAddress.setText("배송자 주소 : "+postList.get(i).getReceiverAddress());
+        receiverNumber.setText("배송자 번호 : "+postList.get(i).getReceiverNumber()+"");
+        date.setText("배송일 : "+postList.get(i).getDate());
+        deliveryCheck.setClickable(!postList.get(i).isDeliverCheck());
         postCheck.setChecked(postList.get(i).isPostcheck());
-
-
-
-        postCheck.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener(){
-
-            @Override
-            public void onCheckedChanged(CompoundButton arg0, boolean isChecked) {
-                if (isChecked){
-
-                    Toast.makeText(context.getApplicationContext(), "배송 완료", Toast.LENGTH_SHORT).show();
-
-                    postCheck.setEnabled(false);   // Will Disable checkbox
-                }
-            }
-        });
-
         v.setTag(postList.get(i).getReceiverNumber());
         return v;
     }

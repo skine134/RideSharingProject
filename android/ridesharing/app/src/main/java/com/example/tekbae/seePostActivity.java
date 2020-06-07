@@ -20,7 +20,8 @@ public class seePostActivity extends AppCompatActivity {
     private postListAdapter adapter;
 
     private List<Post> postList;
-    private CheckBox postCheck;
+    private Button postCheck;
+    private Button deliveriCheck;
     private Button mapButton;
     private EditText findtext;
 
@@ -28,15 +29,14 @@ public class seePostActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_see_post);
-        postCheck = (CheckBox) findViewById(R.id.postcheck);
+        postCheck = (Button) findViewById(R.id.postcheck);
+        deliveriCheck=(Button)findViewById(R.id.deliverycheck);
         listView = (ListView)findViewById(R.id.Items);
         findtext=(EditText)findViewById(R.id.search);
         mapButton = findViewById(R.id.mapButton);
 
         postList = new ArrayList<Post>();
 
-        //ReceiverName,ReceiverNumber,ReceiverAddress,Item,SenderAddress,SenderNumber,DeliverCheck,UberId,UberName,postCheck,Date,No
-        //"배송자 이름","배송자 번호", "배송자 주소","물건", "수령자 주소","수령자 번호",false,false,"날짜"
         try {
            String output=new Connection("Uber","select",LoginActivity.map.get("UberName"),null,null,null).execute("http://prawnguns.dothome.co.kr/regosterUser.php?").get();
            LoginActivity.map.put("list",output);
@@ -52,20 +52,8 @@ public class seePostActivity extends AppCompatActivity {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-
-
-
-
-
-
         adapter = new postListAdapter(getApplicationContext(), postList);
         listView.setAdapter(adapter);
-
-
-
-
-
-
         // 지도로 보기 버튼 클릭시 이벤트
         mapButton.setOnClickListener(new View.OnClickListener() {
             @Override

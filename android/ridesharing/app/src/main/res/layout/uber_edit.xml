@@ -33,12 +33,7 @@
             android:layout_gravity="center_horizontal"
             android:text="뒤로가기"/>
 
-        <Button
-            android:id="@+id/button1_1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="추가 출근자"
-            />
+
 
     </LinearLayout>
 
