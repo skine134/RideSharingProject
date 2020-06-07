@@ -1,7 +1,5 @@
 package com.example.tekbae;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -10,12 +8,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.toolbox.Volley;
-
-import org.json.JSONException;
-import org.json.JSONObject;
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.HashMap;
 import java.util.concurrent.ExecutionException;
@@ -48,7 +41,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    String outputdata=new Connection("User","select",idText.getText().toString(),null,null,null).execute("http://prawnguns.dothome.co.kr/regosterUser.php?").get();
+                    String outputdata=new Connection("User","select",idText.getText().toString()/*id*/,null,null,null).execute("http://prawnguns.dothome.co.kr/regosterUser.php?").get();
                     String[] arr=outputdata.split(",");
                     if(arr[0].equals(idText.getText().toString()) &&arr[1].equals(passwordText.getText().toString())){
                         if(arr[7].equals("1")){             // 1 is administrator

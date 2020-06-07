@@ -1,17 +1,14 @@
 package com.example.tekbae;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,10 +18,12 @@ public class seePostActivity extends AppCompatActivity {
 
     private ListView listView;
     private postListAdapter adapter;
+
     private List<Post> postList;
     private CheckBox postCheck;
     private Button mapButton;
     private EditText findtext;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +31,8 @@ public class seePostActivity extends AppCompatActivity {
         postCheck = (CheckBox) findViewById(R.id.postcheck);
         listView = (ListView)findViewById(R.id.Items);
         findtext=(EditText)findViewById(R.id.search);
+        mapButton = findViewById(R.id.mapButton);
+
         postList = new ArrayList<Post>();
 
         //ReceiverName,ReceiverNumber,ReceiverAddress,Item,SenderAddress,SenderNumber,DeliverCheck,UberId,UberName,postCheck,Date,No
@@ -49,12 +50,21 @@ public class seePostActivity extends AppCompatActivity {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+
+
+
+
+
+
         adapter = new postListAdapter(getApplicationContext(), postList);
         listView.setAdapter(adapter);
 
 
-        mapButton = findViewById(R.id.mapButton);
 
+
+
+
+        // 지도로 보기 버튼 클릭시 이벤트
         mapButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
