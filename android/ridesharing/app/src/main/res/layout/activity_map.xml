@@ -1,16 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<fragment
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MapActivity" >
+    android:id="@+id/map"
+    android:name="com.naver.maps.map.MapFragment"
+    >
+        <com.naver.maps.map.widget.LocationButtonView
+            android:id="@+id/location_button"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_gravity="end|center"
+            />
+        <com.naver.maps.map.widget.ZoomControlView
+            android:id="@+id/zoom_control"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_gravity="end|bottom"
+            />
+        <com.naver.maps.map.widget.CompassView
+            android:id="@+id/compass"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_gravity="start|top
+"
 
-    <fragment
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/map"
-        tools:context=".MapsActivity"
-        android:name="com.google.android.gms.maps.SupportMapFragment" />
+            />
 
 
-</LinearLayout>
+</fragment>

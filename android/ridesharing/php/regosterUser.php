@@ -44,7 +44,10 @@
 	    			$result=$do->DeleteToUber($contents);
 	   				break;
 	   			case 'select':
-	   				$result=$do->getValueToUber($contents);
+    				if($changetag=='Date')
+	   					$result=$do->getDateToUber($contents);
+	   				else
+	   					$result=$do->getUbernameToUber($contents);
 	   				break;
 	   			case 'update':
 	    				$result=$do->changeUbertoUber($changeparam1,$changeparam2);
