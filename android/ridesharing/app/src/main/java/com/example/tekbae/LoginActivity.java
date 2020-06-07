@@ -47,19 +47,19 @@ public class LoginActivity extends AppCompatActivity {
         loginbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                try {
-                    String outputdata=new Connection("User","select",idText.getText().toString(),null,null,null).execute("http://prawnguns.dothome.co.kr/regosterUser.php?").get();
-                    String[] arr=outputdata.split(",");
-                    if(arr[0].equals(idText.getText().toString()) &&arr[1].equals(passwordText.getText().toString())){
-                        if(arr[7].equals("1")){             // 1 is administrator
-                            Intent intent=new Intent(getApplicationContext(),manager_menu.class);
-                            startActivity(intent);
-                        }
-                        else if(arr[7].equals("0")){            //0 is Uber
-                            Intent intent=new Intent(getApplicationContext(),uber_menu.class);
-                            map.put("UberId",arr[0]);
-                            map.put("UberName",arr[2]);
-                            startActivity(intent);
+                            try {
+                                String outputdata=new Connection("User","select",idText.getText().toString(),null,null,null).execute("http://prawnguns.dothome.co.kr/regosterUser.php?").get();
+                                String[] arr=outputdata.split(",");
+                                if(arr[0].equals(idText.getText().toString()) &&arr[1].equals(passwordText.getText().toString())){
+                                    if(arr[7].equals("1")){             // 1 is administrator
+                                        Intent intent=new Intent(getApplicationContext(),manager_menu.class);
+                                        startActivity(intent);
+                                    }
+                                    else if(arr[7].equals("0")){            //0 is Uber
+                                        Intent intent=new Intent(getApplicationContext(),uber_menu.class);
+                                        map.put("UberId",arr[0]);
+                                        map.put("UberName",arr[2]);
+                                        startActivity(intent);
                         }
                         else{
                             Toast toast=Toast.makeText(LoginActivity.this,"not found tag",Toast.LENGTH_SHORT);

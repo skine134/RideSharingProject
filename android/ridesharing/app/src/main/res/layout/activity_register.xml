@@ -8,8 +8,8 @@
 
     <EditText
         android:id="@+id/ageText"
-        android:layout_width="367dp"
-        android:layout_height="61dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="16dp"
@@ -21,8 +21,8 @@
 
     <EditText
         android:id="@+id/addressText"
-        android:layout_width="367dp"
-        android:layout_height="61dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="16dp"
@@ -34,8 +34,8 @@
 
     <EditText
         android:id="@+id/numberText"
-        android:layout_width="367dp"
-        android:layout_height="61dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="16dp"
@@ -47,8 +47,8 @@
 
     <EditText
         android:id="@+id/emailText"
-        android:layout_width="367dp"
-        android:layout_height="61dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="16dp"
@@ -60,8 +60,8 @@
 
     <EditText
         android:id="@+id/nameText"
-        android:layout_width="367dp"
-        android:layout_height="61dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="16dp"
@@ -73,8 +73,8 @@
 
     <EditText
         android:id="@+id/passMain"
-        android:layout_width="367dp"
-        android:layout_height="61dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="16dp"
@@ -86,8 +86,8 @@
 
     <EditText
         android:id="@+id/idMain"
-        android:layout_width="367dp"
-        android:layout_height="61dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="16dp"
@@ -99,8 +99,8 @@
 
     <Button
         android:id="@+id/registerButton"
-        android:layout_width="367dp"
-        android:layout_height="61dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="16dp"

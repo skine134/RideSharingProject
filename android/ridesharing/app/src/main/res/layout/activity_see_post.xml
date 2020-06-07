@@ -48,26 +48,25 @@
             android:text="배송완료"
             android:textSize="10pt" />
     </LinearLayout>
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="5pt">
+
         <ListView
+            android:id="@+id/Items"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/Items"
+            android:layout_marginLeft="15dp"
             android:layout_marginTop="10dp"
             android:layout_marginRight="15dp"
-            android:layout_marginLeft="15dp"
-            android:dividerHeight="10dp"
-            android:divider="#d1d1d1">
+            android:divider="#d1d1d1"
+            android:dividerHeight="10dp">
 
         </ListView>
 
     </ScrollView>
-
-
-
 
 
 </LinearLayout>
