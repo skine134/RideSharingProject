@@ -56,11 +56,15 @@
             android:id="@+id/Items"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+
             android:layout_margin="10dp"
+
             android:divider="#d1d1d1"
             android:dividerHeight="10dp">
 
         </ListView>
+
+
 
 
 </LinearLayout>

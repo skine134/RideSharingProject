@@ -41,11 +41,13 @@ public class seePostActivity extends AppCompatActivity {
            String output=new Connection("Uber","select",LoginActivity.map.get("UberName"),null,null,null).execute("http://prawnguns.dothome.co.kr/regosterUser.php?").get();
            LoginActivity.map.put("list",output);
            String[] arr=output.split("/");
+
             for (int i=0;i<arr.length;i++) {
                 String[] arr2 = arr[i].split(",");
                 postList.add(new Post(arr2[0], Integer.parseInt(arr2[1]), arr2[2], arr2[3], arr2[4], Integer.parseInt(arr2[5]), false, false, arr2[9]));
             }
             } catch (ExecutionException e) {
+
             e.printStackTrace();
         } catch (InterruptedException e) {
             e.printStackTrace();
