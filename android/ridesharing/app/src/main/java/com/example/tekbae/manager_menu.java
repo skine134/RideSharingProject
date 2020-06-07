@@ -17,6 +17,7 @@ public class manager_menu extends Activity {
         Management_Menu=(Button)findViewById(R.id.management_menu);
         URL_menu=(Button)findViewById(R.id.url_menu);
         back_menu=(Button)findViewById(R.id.main_menu);
+
         Management_Menu.setOnClickListener(new View.OnClickListener(){
 
             @Override
@@ -25,6 +26,7 @@ public class manager_menu extends Activity {
                 startActivity(intent);
             }
         });
+
         URL_menu.setOnClickListener(new View.OnClickListener(){
 
             @Override
@@ -33,5 +35,15 @@ public class manager_menu extends Activity {
                 startActivity(intent);
             }
         });
+
+        back_menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(manager_menu.this, FirstActivity.class);
+                finish();
+                startActivity(intent);
+            }
+        });
     }
+
 }

@@ -96,4 +96,5 @@ public class Post {
     public void setDate(String date) {
         this.date = date;
     }
+
 }
