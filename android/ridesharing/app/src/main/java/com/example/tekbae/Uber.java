@@ -13,9 +13,10 @@ public class Uber {
     Boolean postCheck;
     String Date;
     String No;
+    Boolean check;
 
     public Uber(String ReceiverName, int ReceiverNumber, String ReceiverAddress, String Item, String SenderAddress,
-        int SenderNumber, Boolean DeliverCheck, String UberId, String UberName, Boolean postCheck, String Date, String No) {
+        int SenderNumber, Boolean DeliverCheck, String UberId, String UberName, Boolean postCheck, String Date, String No,Boolean check) {
             this.ReceiverName = ReceiverName;
             this.ReceiverNumber = ReceiverNumber;
             this.ReceiverAddress = ReceiverAddress;
@@ -28,6 +29,7 @@ public class Uber {
             this.postCheck = postCheck;
             this.Date = Date;
             this.No = No;
+            this.check = check;
     }
 
 
@@ -128,5 +130,13 @@ public class Uber {
 
     public void setNo(String no) {
         No = no;
+    }
+
+    public Boolean getCheck() {
+        return check;
+    }
+
+    public void setCheck(Boolean check) {
+        this.check = check;
     }
 }

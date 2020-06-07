@@ -21,19 +21,36 @@ import java.util.concurrent.ExecutionException;
 
 public class total_management_menu extends AppCompatActivity {
 
+    ArrayList<String> uberListArray;
+    ArrayAdapter<String> uberListArrayAdapter;
     private ListView listView;
     private UberListAdapter uberadapter;
     private List<Uber> uberList;
     private CheckBox postCheck;
     private Button mapButton;
     private Button searchBtn;
+    private Button selectAllBtn;
     private Spinner uberListSpinner;
     private int spinnerInt;
     private EditText searchTEXT;
-    private String searchString;
-    ArrayList<String> uberListArray;
-    ArrayAdapter<String> uberListArrayAdapter;
+    private String[] uberArr;
 
+    public void uberSearch(int a)
+    {
+        String searchString = searchTEXT.getText().toString();
+        {
+            uberList.clear();
+
+            for (int i = 0; i < uberArr.length; i++) {
+                String[] arr2 = uberArr[i].split(",");
+                if (arr2[a].equals(searchString)) {
+                    uberList.add(new Uber(arr2[0], Integer.parseInt(arr2[1]), arr2[2], arr2[3], arr2[4], Integer.parseInt(arr2[5]), false, arr2[7], arr2[8], false, arr2[10], arr2[11],false));
+                }
+            }
+            uberadapter = new UberListAdapter(getApplicationContext(), uberList);
+            listView.setAdapter(uberadapter);
+        }
+    }
 
 
     public void onCreate(Bundle bundle) {
@@ -44,7 +61,7 @@ public class total_management_menu extends AppCompatActivity {
         uberList = new ArrayList<Uber>();
         listView = (ListView) findViewById(R.id.uberlist);
         searchBtn = (Button) findViewById(R.id.commuter4);
-
+        selectAllBtn = (Button) findViewById(R.id.Uber_Check);
 
         uberListArray = new ArrayList<>();
         uberListArray.add("전체");
@@ -99,11 +116,12 @@ public class total_management_menu extends AppCompatActivity {
         try {
             outUber = new Connection("Uber", "select", LoginActivity.map.get(""), "All", null, null).execute("http://prawnguns.dothome.co.kr/regosterUser.php?").get();
             String[] arr = outUber.split("/");
+            uberArr = arr;
 
 
             for (int i = 0; i < arr.length; i++) {
-                String[] arr2 = arr[i].split(",");
-                uberList.add(new Uber(arr2[0], Integer.parseInt(arr2[1]), arr2[2], arr2[3], arr2[4], Integer.parseInt(arr2[5]), false, arr2[7], arr2[8], false, arr2[10], arr2[11]));
+                String[] arr1 = arr[i].split(",");
+                uberList.add(new Uber(arr1[0], Integer.parseInt(arr1[1]), arr1[2], arr1[3], arr1[4], Integer.parseInt(arr1[5]), false, arr1[7], arr1[8], false, arr1[10], arr1[11],false));
             }
             uberadapter = new UberListAdapter(getApplicationContext(), uberList);
             listView.setAdapter(uberadapter);
@@ -115,123 +133,57 @@ public class total_management_menu extends AppCompatActivity {
             e.printStackTrace();
         }
 
-
-
         searchBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                searchTEXT = (EditText) findViewById(R.id.searchEdit);
-                searchString = searchTEXT.getText().toString();
-
-                switch(spinnerInt){
-                    //전체
-                    case 0:{
-                        ////////////
-                        {
-
+                searchTEXT = (EditText)findViewById(R.id.searchEdit);
+                //전체
+                if(spinnerInt==0){
+                    {
                             uberList.clear();
 
-                            Toast.makeText(getApplicationContext(), searchString+uberListArray.get(spinnerInt) + "가 선택되었습니다.",
-                                    Toast.LENGTH_SHORT).show();
-
-
-                            String searchUber = null;
-                            try {
-                                searchUber = new Connection("Uber", "select", LoginActivity.map.get(""), "All", null, null).execute("http://prawnguns.dothome.co.kr/regosterUser.php?").get();
-                                String[] arr = searchUber.split("/");
-
-
-                                for (int i = 0; i < arr.length; i++) {
-                                    String[] arr2 = arr[i].split(",");
-                                    uberList.add(new Uber(arr2[0], Integer.parseInt(arr2[1]), arr2[2], arr2[3], arr2[4], Integer.parseInt(arr2[5]), false, arr2[7], arr2[8], false, arr2[10], arr2[11]));
-                                }
-                                uberadapter = new UberListAdapter(getApplicationContext(), uberList);
-                                listView.setAdapter(uberadapter);
-
-
-                            } catch (ExecutionException e) {
-                                e.printStackTrace();
-                            } catch (InterruptedException e) {
-                                e.printStackTrace();
+                            for (int i = 0; i < uberArr.length; i++) {
+                                String[] arr2 = uberArr[i].split(",");
+                                uberList.add(new Uber(arr2[0], Integer.parseInt(arr2[1]), arr2[2], arr2[3], arr2[4], Integer.parseInt(arr2[5]), false, arr2[7], arr2[8], false, arr2[10], arr2[11],false));
                             }
-                        }
-                        ////////////
+                            uberadapter = new UberListAdapter(getApplicationContext(), uberList);
+                            listView.setAdapter(uberadapter);
                     }
-                    //수령자 이름
-                    case 1:{
-                        ///////////////
-                        {
-
-                            uberList.clear();
-
-                            Toast.makeText(getApplicationContext(), uberListArray.get(spinnerInt) + "가 선택되었습니다.",
-                                    Toast.LENGTH_SHORT).show();
-
-
-                            String searchUber = null;
-                            try {
-                                searchUber = new Connection("Uber", "select", LoginActivity.map.get(""), "All", null, null).execute("http://prawnguns.dothome.co.kr/regosterUser.php?").get();
-                                String[] arr = searchUber.split("/");
-
-
-                                for (int i = 0; i < arr.length; i++) {
-                                    String[] arr2 = arr[i].split(",");
-                                    uberList.add(new Uber(arr2[0], Integer.parseInt(arr2[1]), arr2[2], arr2[3], arr2[4], Integer.parseInt(arr2[5]), false, arr2[7], arr2[8], false, arr2[10], arr2[11]));
-                                }
-                                uberadapter = new UberListAdapter(getApplicationContext(), uberList);
-                                listView.setAdapter(uberadapter);
-
-
-                            } catch (ExecutionException e) {
-                                e.printStackTrace();
-                            } catch (InterruptedException e) {
-                                e.printStackTrace();
-                            }
-                        }
-                        ////////////
-                    }
-                    //수령자 번호
-                    case 2:{
-
-                    }
-                    //택배물
-                    case 3:{
-
-                    }
-                    //배송자 번호
-                    case 4:{
-
-                    }
-                    //배송자 ID
-                    case 5:{
-
-                    }
-                    //배송자 이름
-                    case 6:{
-
-                    }
-                    //배송자 날짜
-                    case 7:{
-
-                    }
-                    //번호
-                    case 8:{
-
-                    }
-                    //배송 가능
-                    case 9:{
-
-                    }
-                    //수령 가능
-                    case 10:{
-
-                    }
-
                 }
+                //수령자 이름
+                else if(spinnerInt==1){ uberSearch(0);}
+                //수령자 번호
+                else if(spinnerInt==2){uberSearch(1);}
+                //택배물
+                else if(spinnerInt==3){uberSearch(3);}
+                //배송자 번호
+                else if(spinnerInt==4){uberSearch(6);}
+                //배송자 ID
+                else if(spinnerInt==5){uberSearch(7);}
+                //배송자 이름
+                else if(spinnerInt==6){uberSearch(8);}
+                //배송 날짜
+                else if(spinnerInt==7){uberSearch(10);}
+                //번호
+                else if(spinnerInt==8){uberSearch(11);}
+                //배송 가능(
+                else if(spinnerInt==9){uberSearch(6);}
+                //수령 가능
+                else if(spinnerInt==10){uberSearch(9);}
+            }
+        });
+
+        selectAllBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
 
 
             }
         });
+
+
+
 
     }
 }

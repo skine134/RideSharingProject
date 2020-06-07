@@ -51,8 +51,10 @@ public class UberListAdapter extends BaseAdapter {
         TextView Date = (TextView)v.findViewById(R.id.Uber_date);
         TextView No = (TextView)v.findViewById(R.id.Uber_No);
 
+
         final CheckBox DeliverCheck = (CheckBox)v.findViewById(R.id.Uber_deliverCheck);
         final CheckBox postCheck = (CheckBox)v.findViewById(R.id.Uber_postCheck);
+        final CheckBox check = (CheckBox)v.findViewById(R.id.Uber_Check);
 
 
 
@@ -68,6 +70,7 @@ public class UberListAdapter extends BaseAdapter {
         No.setText("번호: "+UberList.get(i).getNo());
         DeliverCheck.setChecked(UberList.get(i).getDeliverCheck());
         postCheck.setChecked(UberList.get(i).getPostCheck());
+        check.setChecked(UberList.get(i).getCheck());
 
         postCheck.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener(){
 
@@ -91,6 +94,19 @@ public class UberListAdapter extends BaseAdapter {
                     Toast.makeText(context.getApplicationContext(), "배송 가능", Toast.LENGTH_SHORT).show();
 
 /*                    DeliverCheck.setEnabled(false);   // Will Disable checkbox*/
+                }
+            }
+        });
+
+        check.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener(){
+
+            @Override
+            public void onCheckedChanged(CompoundButton arg0, boolean isChecked) {
+                if (isChecked){
+
+                    Toast.makeText(context.getApplicationContext(), "체크 되었습니다", Toast.LENGTH_SHORT).show();
+
+                    /*                    DeliverCheck.setEnabled(false);   // Will Disable checkbox*/
                 }
             }
         });
