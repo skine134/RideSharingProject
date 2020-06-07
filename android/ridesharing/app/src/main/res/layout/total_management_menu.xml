@@ -65,7 +65,7 @@
 
 
         <EditText
-            android:id="@+id/editText"
+            android:id="@+id/searchEdit"
             android:layout_width="140dp"
             android:layout_height="wrap_content"
             android:ems="10"

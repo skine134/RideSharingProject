@@ -26,10 +26,11 @@ public class total_management_menu extends AppCompatActivity {
     private List<Uber> uberList;
     private CheckBox postCheck;
     private Button mapButton;
-    private EditText findtext;
     private Button searchBtn;
     private Spinner uberListSpinner;
     private int spinnerInt;
+    private EditText searchTEXT;
+    private String searchString;
     ArrayList<String> uberListArray;
     ArrayAdapter<String> uberListArrayAdapter;
 
@@ -43,6 +44,7 @@ public class total_management_menu extends AppCompatActivity {
         uberList = new ArrayList<Uber>();
         listView = (ListView) findViewById(R.id.uberlist);
         searchBtn = (Button) findViewById(R.id.commuter4);
+
 
         uberListArray = new ArrayList<>();
         uberListArray.add("전체");
@@ -118,36 +120,116 @@ public class total_management_menu extends AppCompatActivity {
         searchBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ///////////////
-                {
+                searchTEXT = (EditText) findViewById(R.id.searchEdit);
+                searchString = searchTEXT.getText().toString();
 
-                    uberList.clear();
+                switch(spinnerInt){
+                    //전체
+                    case 0:{
+                        ////////////
+                        {
 
-                    Toast.makeText(getApplicationContext(), uberListArray.get(spinnerInt) + "가 선택되었습니다.",
-                            Toast.LENGTH_SHORT).show();
+                            uberList.clear();
+
+                            Toast.makeText(getApplicationContext(), searchString+uberListArray.get(spinnerInt) + "가 선택되었습니다.",
+                                    Toast.LENGTH_SHORT).show();
 
 
-                    String searchUber = null;
-                    try {
-                        searchUber = new Connection("Uber", "select", LoginActivity.map.get(""), "All", null, null).execute("http://prawnguns.dothome.co.kr/regosterUser.php?").get();
-                        String[] arr = searchUber.split("/");
+                            String searchUber = null;
+                            try {
+                                searchUber = new Connection("Uber", "select", LoginActivity.map.get(""), "All", null, null).execute("http://prawnguns.dothome.co.kr/regosterUser.php?").get();
+                                String[] arr = searchUber.split("/");
 
 
-                        for (int i = 0; i < 4; i++) {
-                            String[] arr2 = arr[i].split(",");
-                            uberList.add(new Uber(arr2[0], Integer.parseInt(arr2[1]), arr2[2], arr2[3], arr2[4], Integer.parseInt(arr2[5]), false, arr2[7], arr2[8], false, arr2[10], arr2[11]));
+                                for (int i = 0; i < arr.length; i++) {
+                                    String[] arr2 = arr[i].split(",");
+                                    uberList.add(new Uber(arr2[0], Integer.parseInt(arr2[1]), arr2[2], arr2[3], arr2[4], Integer.parseInt(arr2[5]), false, arr2[7], arr2[8], false, arr2[10], arr2[11]));
+                                }
+                                uberadapter = new UberListAdapter(getApplicationContext(), uberList);
+                                listView.setAdapter(uberadapter);
+
+
+                            } catch (ExecutionException e) {
+                                e.printStackTrace();
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                            }
                         }
-                        uberadapter = new UberListAdapter(getApplicationContext(), uberList);
-                        listView.setAdapter(uberadapter);
-
-
-                    } catch (ExecutionException e) {
-                        e.printStackTrace();
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
+                        ////////////
                     }
+                    //수령자 이름
+                    case 1:{
+                        ///////////////
+                        {
+
+                            uberList.clear();
+
+                            Toast.makeText(getApplicationContext(), uberListArray.get(spinnerInt) + "가 선택되었습니다.",
+                                    Toast.LENGTH_SHORT).show();
+
+
+                            String searchUber = null;
+                            try {
+                                searchUber = new Connection("Uber", "select", LoginActivity.map.get(""), "All", null, null).execute("http://prawnguns.dothome.co.kr/regosterUser.php?").get();
+                                String[] arr = searchUber.split("/");
+
+
+                                for (int i = 0; i < arr.length; i++) {
+                                    String[] arr2 = arr[i].split(",");
+                                    uberList.add(new Uber(arr2[0], Integer.parseInt(arr2[1]), arr2[2], arr2[3], arr2[4], Integer.parseInt(arr2[5]), false, arr2[7], arr2[8], false, arr2[10], arr2[11]));
+                                }
+                                uberadapter = new UberListAdapter(getApplicationContext(), uberList);
+                                listView.setAdapter(uberadapter);
+
+
+                            } catch (ExecutionException e) {
+                                e.printStackTrace();
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                        ////////////
+                    }
+                    //수령자 번호
+                    case 2:{
+
+                    }
+                    //택배물
+                    case 3:{
+
+                    }
+                    //배송자 번호
+                    case 4:{
+
+                    }
+                    //배송자 ID
+                    case 5:{
+
+                    }
+                    //배송자 이름
+                    case 6:{
+
+                    }
+                    //배송자 날짜
+                    case 7:{
+
+                    }
+                    //번호
+                    case 8:{
+
+                    }
+                    //배송 가능
+                    case 9:{
+
+                    }
+                    //수령 가능
+                    case 10:{
+
+                    }
+
                 }
-                ////////////
+
+
             }
         });
 

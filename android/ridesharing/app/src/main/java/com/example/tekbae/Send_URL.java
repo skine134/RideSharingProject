@@ -17,7 +17,7 @@ public class Send_URL extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.send_url);
 
-        txt = (EditText) findViewById(R.id.editText);
+        txt = (EditText) findViewById(R.id.searchEdit);
         btn = (Button) findViewById(R.id.button);
 
         btn.setOnClickListener(new View.OnClickListener() {
