@@ -58,7 +58,7 @@ public class postListAdapter extends BaseAdapter {
 
 
 
-        /*postCheck.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener(){
+        postCheck.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener(){
 
             @Override
             public void onCheckedChanged(CompoundButton arg0, boolean isChecked) {
@@ -69,7 +69,7 @@ public class postListAdapter extends BaseAdapter {
                     postCheck.setEnabled(false);   // Will Disable checkbox
                 }
             }
-        });*/
+        });
 
         v.setTag(postList.get(i).getReceiverNumber());
         return v;

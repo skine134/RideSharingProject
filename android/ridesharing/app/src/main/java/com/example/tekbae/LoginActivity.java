@@ -53,6 +53,7 @@ public class LoginActivity extends AppCompatActivity {
                             map.put("UberId",arr[0]);
                             map.put("UberName",arr[2]);
                             startActivity(intent);
+
                         }
                         else{
                             Toast toast=Toast.makeText(LoginActivity.this,"not found tag",Toast.LENGTH_SHORT);
