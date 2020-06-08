@@ -73,21 +73,22 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
         String[] arr=getList.split("/");
         for (int i=0;i<arr.length;i++) {
             String[] arr2 = arr[i].split(",");
-            if(!arr2[2].equals("") &&arr2[2]!=null) {
-                Log.e("test",arr2[2]);
-                Marker marker=new Marker();
-                marker.setMap(naverMap);
-                marker.setPosition(getCoord(arr2[2], geocoder));
-                marker.setIcon(MarkerIcons.BLACK);
-                marker.setIconTintColor(Color.RED);
-                marker.setCaptionText("수령자 :"+arr2[0]+"\n 주소 : "+arr2[2]+"\n물건 :"+arr2[3]+"\n수령자 번호 : "+"0"+arr2[1]);
-                //"수령자 이름","수령자 번호", "수령자 주소","물건", "배송자 주소","배송자 번호",false,false,"날짜"
-                //this.ReceiverNumber+","+this.ReceiverAddress+this.Thing;
-                info.put((new Post(arr2[0], Integer.parseInt(arr2[1]), arr2[2], arr2[3], arr2[4], Integer.parseInt(arr2[5]), false, false, arr2[9])), marker);
-            }
-            else{
-                Log.e("test","address : "+arr2[2]);
-            }
+            if(arr2.length>1)
+                if(!arr2[2].equals("") &&arr2[2]!=null) {
+                    Log.e("test",arr2[2]);
+                    Marker marker=new Marker();
+                    marker.setMap(naverMap);
+                    marker.setPosition(getCoord(arr2[2], geocoder));
+                    marker.setIcon(MarkerIcons.BLACK);
+                    marker.setIconTintColor(Color.RED);
+                    marker.setCaptionText("수령자 :"+arr2[0]+"\n 주소 : "+arr2[2]+"\n물건 :"+arr2[3]+"\n수령자 번호 : "+"0"+arr2[1]);
+                    //"수령자 이름","수령자 번호", "수령자 주소","물건", "배송자 주소","배송자 번호",false,false,"날짜"
+                    //this.ReceiverNumber+","+this.ReceiverAddress+this.Thing;
+                    info.put((new Post(arr2[0], Integer.parseInt(arr2[1]), arr2[2], arr2[3], arr2[4], Integer.parseInt(arr2[5]), false, false, arr2[9])), marker);
+                }
+                else{
+                    Log.e("test","address : "+arr2[2]);
+                }
         }
         naverMapOptions.camera(cameraPosition);
 

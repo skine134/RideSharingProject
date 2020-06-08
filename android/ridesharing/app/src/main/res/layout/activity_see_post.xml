@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#d1d1d1"
-
     tools:context=".seePostActivity">
 
     <TextView
@@ -21,50 +20,42 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="지도로 보기" />
-    <EditText
-        android:id="@+id/search"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="검색" />
     <LinearLayout
-        android:id="@+id/linear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/searchTxt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="8"
+            android:hint="검색" />
+        <Button
+            android:id="@+id/btnSearch"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="검색"/>
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:orientation="horizontal">
-
         <TextView
-            android:layout_width="300dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="10pt"
             android:gravity="center"
             android:text="배송 정보"
             android:background="#ff8f7f"/>
-
-        <TextView
-            android:layout_width="80dp"
-            android:layout_height="match_parent"
-            android:layout_alignParentRight="true"
-            android:layout_marginLeft="3pt"
-            android:background="#ff8f7f"
-            android:gravity="center"
-            android:text="배송완료"
-            android:textSize="8pt" />
     </LinearLayout>
 
-        <ListView
-            android:id="@+id/Items"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-
-            android:layout_margin="10dp"
-
-            android:divider="#d1d1d1"
-            android:dividerHeight="10dp">
-
-        </ListView>
-
-
+    <ListView
+        android:id="@+id/postlistView"
+        android:layout_width="match_parent"
+        android:layout_height="350dp" />
 
 
 </LinearLayout>

@@ -116,7 +116,7 @@ public class Send_URL extends AppCompatActivity {
                         + "\r\n보내는분 번호 : " + simpleList[i][5] + "\r\n배송 날짜 : " + simpleList[i][6]);
                 btn[i].setTextSize(11);
                 btn[i].setGravity(Gravity.LEFT);
-                btn[i].setId(i);
+                btn[i].setId(View.generateViewId());
                 listlayout.addView(btn[i]);
             }
         }else {
@@ -136,9 +136,11 @@ public class Send_URL extends AppCompatActivity {
                     String Url = "http://prawnguns.dothome.co.kr/survey.html";
                     SmsManager sms = SmsManager.getDefault();
                     for(int i=0; i<phoneList.length; i++){
-                        sms.sendTextMessage("01032516989", null, "안녕하세요 TAKBAE 고객님, 오늘부로 00시~00시 사이에 주문하신 물품이 배송될 예정입니다.", null, null);
                         sms.sendTextMessage("01032516989", null, Url, null, null);
+                        sms.sendTextMessage("01032516989", null, "안녕하세요 TAKBAE 고객님, 오늘부로 00시~00시 사이에 주문하신 물품이 배송될 예정입니다.", null, null);
                     }
+                    Toast.makeText(getApplicationContext(), "Url을 전송하였습니다", Toast.LENGTH_SHORT).show();
+                    finish();
 
                 }
             }

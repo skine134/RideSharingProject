@@ -51,7 +51,7 @@ public class Connection extends AsyncTask<String,String,String> {
                 buffer.append("Changeparam1").append("=").append(changeparam1).append("&");
                 buffer.append("Changeparam2").append("=").append(changeparam2).append("&");
 
-                OutputStreamWriter outStream = new OutputStreamWriter(connection.getOutputStream(), "EUC-KR");
+                OutputStreamWriter outStream = new OutputStreamWriter(connection.getOutputStream(), "UTF-8");
                 PrintWriter writer = new PrintWriter(outStream);
                 writer.write(buffer.toString());
                 writer.flush();

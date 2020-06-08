@@ -1,6 +1,7 @@
 package com.example.tekbae;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -20,8 +21,11 @@ public class check_sign extends Activity {
 
         btnOK = (Button) findViewById(R.id.btnOk);
         btnCANCEL = (Button) findViewById(R.id.btnCsl);
-
         signpad = (SignaturePad) findViewById(R.id.signature_pad);
+
+        Intent intent = getIntent();
+        int flag = intent.getExtras().getInt("signOk");
+
 
         signpad.setOnSignedListener(new SignaturePad.OnSignedListener() {
             @Override
@@ -46,6 +50,9 @@ public class check_sign extends Activity {
         btnOK.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+
+
                 finish();
             }
         });

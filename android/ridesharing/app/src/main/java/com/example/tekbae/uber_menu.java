@@ -32,7 +32,6 @@ public class uber_menu extends AppCompatActivity {
 
         checkCommuteButton = (Button) findViewById(R.id.btn1);
         seePostButton = (Button) findViewById(R.id.btn2);
-        checkSignButton = (Button) findViewById(R.id.btn3);
 
 
         seePostButton.setOnClickListener(new View.OnClickListener() {
@@ -46,13 +45,6 @@ public class uber_menu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(uber_menu.this,uber_commute_select.class);
-                startActivity(intent);
-            }
-        });
-        checkSignButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(uber_menu.this, check_sign.class);
                 startActivity(intent);
             }
         });

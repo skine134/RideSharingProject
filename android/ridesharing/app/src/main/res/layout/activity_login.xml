@@ -8,7 +8,7 @@
 
     <EditText
         android:id="@+id/idMain"
-        android:layout_width="386dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
@@ -21,8 +21,8 @@
 
     <EditText
         android:id="@+id/passMain"
-        android:layout_width="386dp"
-        android:layout_height="49dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
         android:layout_marginLeft="12dp"
         android:layout_marginTop="14dp"
@@ -34,10 +34,12 @@
 
     <Button
         android:id="@+id/loginbutton"
-        android:layout_width="386dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:gravity="center"
+        android:layout_gravity="center"
         android:layout_marginTop="11dp"
         android:text="로그인"
         app:layout_constraintStart_toStartOf="parent"

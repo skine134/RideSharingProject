@@ -112,6 +112,7 @@ public class total_management_menu extends AppCompatActivity {
 
             for (int i = 0; i < arr.length; i++) {
                 String[] arr2 = arr[i].split(",");
+                if(arr2.length>1)
                 //ReceiverName,ReceiverNumber,ReceiverAddress,Item,SenderAddress,SenderNumber,DeliverCheck,UberId,UberName,postCheck,Date,No
                 //"배송자 이름","배송자 번호", "배송자 주소","물건", "수령자 주소","수령자 번호",false,false,"날짜"
                 uberList.add(new Uber(arr2[0], Integer.parseInt(arr2[1]), arr2[2], arr2[3], arr2[4], Integer.parseInt(arr2[5]), false, arr2[7], arr2[8], false, arr2[10], arr2[11]));

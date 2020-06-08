@@ -18,7 +18,6 @@ public class FirstActivity extends AppCompatActivity {
         setContentView(R.layout.activity_first);
 
         Button adminButton = (Button) findViewById(R.id.adminButton);
-        Button uberButton = (Button) findViewById(R.id.uberButton);
         Button smallTekbaeButton = (Button) findViewById(R.id.smallTekbaeButton);
         ArrayList<String> arr=new ArrayList<String>();
         arr.add("he");
@@ -32,14 +31,6 @@ public class FirstActivity extends AppCompatActivity {
         new Connection("User","Insert",tmp,null,null,null);
 
         adminButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent registerIntent = new Intent(FirstActivity.this,LoginActivity.class);
-                FirstActivity.this.startActivity(registerIntent);
-            }
-        });
-
-        uberButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent registerIntent = new Intent(FirstActivity.this,LoginActivity.class);

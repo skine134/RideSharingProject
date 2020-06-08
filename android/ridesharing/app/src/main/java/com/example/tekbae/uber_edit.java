@@ -26,7 +26,7 @@ public class uber_edit extends Activity {
         List<Uber> selected=total_management_menu.selected_list.get("selected");
         String outUber=null;
         try {
-            outUber = new Connection("Uber", "select", LoginActivity.map.get(""), "All", null, null).execute("http://prawnguns.dothome.co.kr/regosterUser.php?").get();
+            outUber = new Connection("Uber", "select", null, "All", null, null).execute("http://prawnguns.dothome.co.kr/regosterUser.php?").get();
         } catch (ExecutionException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {
@@ -42,8 +42,10 @@ public class uber_edit extends Activity {
         });
         LinearLayout layout1 = (LinearLayout) findViewById(R.id.manList);
         layout1.setOrientation(LinearLayout.VERTICAL);
+        System.out.println(arr.length);
         for (int i = 0; i < arr.length; i++) {
             String[] arr2 = arr[i].split(",");
+            System.out.println(arr2.length);
             //ReceiverName,ReceiverNumber,ReceiverAddress,Item,SenderAddress,SenderNumber,DeliverCheck,UberId,UberName,postCheck,Date,No
                 uberList.add(0,new Uber(arr2[0], Integer.parseInt(arr2[1]), arr2[2], arr2[3], arr2[4], Integer.parseInt(arr2[5]), false, arr2[7], arr2[8], false, arr2[10], arr2[11]));
                 Button personbtn = new Button(this);
@@ -56,9 +58,11 @@ public class uber_edit extends Activity {
                         String str = null;
                         for (int j = 0; j < selected.size(); j++) {
                             try {
-                                str = new Connection("Uber", "update", uberList.get(0).getUberId() + "," + uberList.get(0).getUberName(),
+                                System.out.println(arr2[7]+","+arr2[8]);
+                                str = new Connection("Uber", "update", arr2[7] + "," + arr2[8],
                                         "Uber", selected.get(j).getUberName(),
                                         selected.get(j).getDate()).execute("http://prawnguns.dothome.co.kr/regosterUser.php?").get();
+                                System.out.println(str);
                             } catch (ExecutionException e) {
                                 e.printStackTrace();
                             } catch (InterruptedException e) {
@@ -68,7 +72,7 @@ public class uber_edit extends Activity {
                         if (str.equals("1")) {
                             Toast.makeText(getApplicationContext(), "정상적으로 교체 되었습니다.", Toast.LENGTH_SHORT);
                         } else {
-                            Toast.makeText(getApplicationContext(), "작업 중 에러가 발생하였습니다.", Toast.LENGTH_SHORT);
+                            Toast.makeText(getApplicationContext(), "작업 중 에러가 발생하였습니다."+str, Toast.LENGTH_SHORT);
                         }
                     });
                 }

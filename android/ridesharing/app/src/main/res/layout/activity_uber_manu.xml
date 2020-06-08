@@ -15,8 +15,13 @@
         android:textSize="80dp"
         android:gravity="center_horizontal"
         />
-
-    <Button
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_vertical"
+        >
+        <Button
         android:id="@+id/btn1"
         android:layout_width="400dp"
         android:layout_height="wrap_content"
@@ -35,16 +40,8 @@
         android:textSize="40dp"
         android:layout_gravity="center_horizontal"
         />
+    </LinearLayout>
 
-    <Button
-        android:id="@+id/btn3"
-        android:layout_width="400dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:text="배송 확인 체크"
-        android:textSize="40dp"
-        android:layout_gravity="center_horizontal"
-        />
 
 
 

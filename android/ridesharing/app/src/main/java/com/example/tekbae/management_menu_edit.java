@@ -23,7 +23,6 @@ public class management_menu_edit extends AppCompatActivity {
         List<Uber> selected=total_management_menu.selected_list.get("selected");
         btn1 = (Button) findViewById(R.id.button1);
         btn2 = (Button) findViewById(R.id.button2);
-        txt1 = (EditText) findViewById(R.id.textField);
 
 
         btn1.setOnClickListener(new View.OnClickListener() {
