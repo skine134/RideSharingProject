@@ -15,7 +15,6 @@ import java.util.concurrent.ExecutionException;
 public class management_menu_edit extends AppCompatActivity {
 
     Button btn1, btn2;
-    EditText txt1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,9 +27,7 @@ public class management_menu_edit extends AppCompatActivity {
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String value = txt1.getText().toString();
                 Intent intent = new Intent(management_menu_edit.this, uber_edit.class);
-                intent.putExtra("textField", value);
                 startActivity(intent);
             }
         });

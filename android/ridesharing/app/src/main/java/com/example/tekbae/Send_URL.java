@@ -2,6 +2,7 @@ package com.example.tekbae;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.telephony.SmsManager;
 import android.view.Gravity;
@@ -11,6 +12,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -39,6 +41,7 @@ public class Send_URL extends AppCompatActivity {
     final int SMS_SEND_PERMISSION = 1; //SMS 송신 퍼미션
 
 
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR1)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,7 +76,7 @@ public class Send_URL extends AppCompatActivity {
 
         //고객 리스트 DB전체 받아오기
         try {
-            output = new Connection("Uber", "select", "20200619", "Date", null, null)
+            output = new Connection("Uber", "select", "20200615", "Date", null, null)
                     .execute("http://prawnguns.dothome.co.kr/regosterUser.php?").get();
 
             if(!output.equals("null")) {

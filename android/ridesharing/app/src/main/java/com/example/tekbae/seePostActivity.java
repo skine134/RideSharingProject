@@ -65,7 +65,7 @@ public class seePostActivity extends AppCompatActivity {
 
         //고객 리스트 DB전체 받아오기
         try {
-            output = new Connection("Uber", "select", "20200615"/*추후변경!! date_info*/, "Date", null, null)
+            output = new Connection("Uber", "select", LoginActivity.map.get("UberId"),null, null, null)
                     .execute("http://prawnguns.dothome.co.kr/regosterUser.php?").get();
             LoginActivity.map.put("list",output);
             String[] arr=output.split("/");
