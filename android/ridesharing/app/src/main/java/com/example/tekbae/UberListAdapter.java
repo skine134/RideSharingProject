@@ -72,6 +72,17 @@ public class UberListAdapter extends BaseAdapter {
         DeliverCheck.setChecked(UberList.get(i).getDeliverCheck());
         postCheck.setChecked(UberList.get(i).getPostCheck());
         selectCheck.setChecked(UberList.get(i).isSelected());
+        selectCheck.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    UberList.get(i).setSelected(true);
+                }
+                else{
+                    UberList.get(i).setSelected(false);
+                }
+            }
+        });
         postCheck.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener(){
 
             @Override

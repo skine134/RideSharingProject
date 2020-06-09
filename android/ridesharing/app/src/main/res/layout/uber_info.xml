@@ -1,188 +1,148 @@
 <?xml version="1.0" encoding="utf-8"?>
-<GridLayout
+<TableLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:columnCount="5"
-    android:rowCount="3"
+    android:stretchColumns="*"
+    android:shrinkColumns="*"
     >
-    <TextView
-        android:id="@+id/Uber_No"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_row="0"
-        android:layout_column="0"
-        android:layout_marginRight="5dp"
-        android:text="No."
-        android:textSize="10dp"
-        android:maxLines="5"
-        android:layout_weight="1"
-        android:ellipsize="none"
-        android:scrollHorizontally="false"
-        android:singleLine="false" >
+    <TableRow
+        android:layout_weight = "1" >
+        <TextView
+            android:id="@+id/Uber_No"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="5dp"
+            android:text="No."
+            android:textSize="10dp"
+            >
 
-    </TextView>
-    <TextView
-        android:id="@+id/Uber_uberName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_row="0"
-        android:layout_column="1"
-        android:text="배송자 이름"
-        android:layout_gravity="top|left"
-        android:layout_marginRight="5dp"
-        android:textSize="10dp"
-        android:ellipsize="end"
-        android:singleLine="true" ></TextView>
-    <TextView
-        android:id="@+id/Uber_date"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_row="0"
-        android:layout_column="2"
-        android:layout_marginRight="5dp"
-        android:text="배송 날짜"
-        android:layout_gravity="top|left"
-        android:textSize="10dp"
-        android:ellipsize="end"
-        android:singleLine="true"
-        ></TextView>
-    <TextView
-        android:id="@+id/Uber_uberId"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_row="0"
-        android:layout_column="3"
-        android:text="배송자 ID"
-        android:layout_gravity="top|left"
-        android:layout_marginRight="5dp"
-        android:textSize="10dp"
-        android:ellipsize="end"
-        android:singleLine="true"
-        ></TextView>
+        </TextView>
+        <TextView
+            android:id="@+id/Uber_uberName"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="5dp"
+            android:text="배송자 이름"
+            android:textSize="10dp">
+
+        </TextView>
+        <TextView
+            android:id="@+id/Uber_date"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="5dp"
+            android:text="배송 날짜"
+            android:textSize="10dp"
+            ></TextView>
+        <TextView
+            android:id="@+id/Uber_uberId"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="5dp"
+            android:text="배송자 ID"
+            android:textSize="10dp"
+            ></TextView>
+    </TableRow>
 
 
-
+<TableRow
+    android:layout_weight = "1" >
     <TextView
         android:id="@+id/Uber_receiverName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_row="1"
-        android:layout_column="0"
-        android:text="수령자 이름"
-        android:layout_gravity="top|left"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
         android:layout_marginRight="5dp"
-        android:textSize="10dp"
-        android:ellipsize="end"
-        android:singleLine="true">
+        android:text="수령자 이름"
+        android:textSize="10dp">
 
     </TextView>
     <TextView
         android:id="@+id/Uber_receiverNumber"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_row="1"
-        android:layout_column="1"
-        android:text="수령자 번호"
-        android:layout_gravity="top|left"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
         android:layout_marginRight="5dp"
-        android:textSize="10dp"
-        android:ellipsize="end"
-        android:singleLine="true" >
+        android:text="수령자 번호"
+        android:textSize="10dp">
 
     </TextView>
     <TextView
         android:id="@+id/Uber_receiverAddress"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_row="1"
-        android:layout_column="2"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
         android:layout_marginRight="5dp"
         android:text="수령자 주소"
-        android:layout_gravity="top|left"
-        android:textSize="10dp"
-        android:ellipsize="end"
-        android:singleLine="true" >
+        android:textSize="10dp">
 
     </TextView>
     <TextView
         android:id="@+id/Uber_item"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_row="1"
-        android:layout_column="3"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginRight="5dp"
         android:text="택배물"
-        android:layout_gravity="top|left"
-        android:layout_marginRight="5dp"
-        android:textSize="10dp"
-        android:ellipsize="end"
-        android:singleLine="true" >
+        android:textSize="10dp">
 
     </TextView>
-
-
-
-    <TextView
-        android:id="@+id/Uber_senderAddress"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_row="2"
-        android:layout_column="0"
-        android:text="배송자 주소"
-        android:layout_gravity="top|left"
-        android:layout_marginRight="5dp"
-        android:textSize="10dp"
-        android:ellipsize="end"
-        android:singleLine="true" >
-
-    </TextView>
-    <TextView
-        android:id="@+id/Uber_senderNumber"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_row="2"
-        android:layout_column="1"
-        android:text="배송자 번호"
-        android:layout_gravity="top|left"
-        android:layout_marginRight="5dp"
-        android:textSize="10dp"
-        android:ellipsize="end"
-        android:singleLine="true" >
-
-    </TextView>
-
-    <CheckBox
-        android:id="@+id/Uber_postCheck"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_row="2"
-        android:layout_column="2"
-        android:text="수령 가능"
-        android:textSize="8dp"
-        >
-
-    </CheckBox>
-    <CheckBox
-        android:id="@+id/Uber_deliverCheck"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_row="2"
-        android:layout_column="3"
-        android:text="배달 완료"
-        android:textSize="8dp">
-
-    </CheckBox>
-
-
-
 
     <CheckBox
         android:id="@+id/Uber_select"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_row="1"
-        android:layout_column="4"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
         android:layout_marginRight="5dp"
-        android:textSize="8dp"></CheckBox>
+        android:textSize="8dp">
 
-</GridLayout>
+    </CheckBox>
+</TableRow>
+    <TableRow
+        android:layout_weight = "1" >
+
+        <TextView
+            android:id="@+id/Uber_senderAddress"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="5dp"
+            android:text="배송자 주소"
+            android:textSize="10dp">
+
+        </TextView>
+        <TextView
+            android:id="@+id/Uber_senderNumber"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="5dp"
+            android:text="배송자 번호"
+            android:textSize="10dp">
+
+        </TextView>
+
+        <CheckBox
+            android:id="@+id/Uber_postCheck"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="5dp"
+            android:text="수령 가능"
+            android:textSize="8dp"
+            >
+
+        </CheckBox>
+        <CheckBox
+            android:id="@+id/Uber_deliverCheck"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="배달 완료"
+            android:layout_marginRight="5dp"
+            android:textSize="8dp">
+
+        </CheckBox>
+    </TableRow>
+
+
+
+
+
+
+
+
+
+</TableLayout>
