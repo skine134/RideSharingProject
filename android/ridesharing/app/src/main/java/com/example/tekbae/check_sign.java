@@ -24,7 +24,8 @@ public class check_sign extends Activity {
         signpad = (SignaturePad) findViewById(R.id.signature_pad);
 
         Intent intent = getIntent();
-        int flag = intent.getExtras().getInt("signOk");
+        SignCheck sc = (SignCheck)intent.getSerializableExtra("sc");
+
 
 
         signpad.setOnSignedListener(new SignaturePad.OnSignedListener() {
@@ -50,9 +51,7 @@ public class check_sign extends Activity {
         btnOK.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-
-
+                sc.setOK();
                 finish();
             }
         });

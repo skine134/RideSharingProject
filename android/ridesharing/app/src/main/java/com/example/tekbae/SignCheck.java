@@ -1,7 +1,12 @@
 package com.example.tekbae;
 
-public class SignCheck {
+import java.io.Serializable;
+@SuppressWarnings("serial")
+public class SignCheck implements Serializable {
     public int flag;
+    public SignCheck(){
+        this.flag = 0;
+    }
 
     public void setOK(){
         this.flag = 1;
