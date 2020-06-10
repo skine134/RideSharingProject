@@ -1,6 +1,8 @@
 package com.example.tekbae;
 
-public class SignCheck {
+import android.os.AsyncTask;
+
+public class SignCheck extends AsyncTask<String, String, Void> {
     public int flag;
 
     public void setOK(){
@@ -13,5 +15,10 @@ public class SignCheck {
 
     public int getFlag(){
         return this.flag;
+    }
+
+    @Override
+    protected Void doInBackground(String... strings) {
+        return null;
     }
 }

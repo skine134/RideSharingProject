@@ -52,7 +52,6 @@ public class check_sign extends Activity {
             public void onClick(View view) {
 
 
-
                 finish();
             }
         });

@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
@@ -17,7 +18,6 @@ import java.util.concurrent.ExecutionException;
 public class postListAdapter extends BaseAdapter {
     private Context context;
     private List<Uber> postList;
-
 
     public postListAdapter(Context context, List<Uber> postList) {
         this.context = context;
@@ -71,10 +71,9 @@ public class postListAdapter extends BaseAdapter {
                 signBtn.setEnabled(false);
                 PostItem.setText("제품명 : " + postList.get(i).getItem() + "(배송완료)");
 
-
                 //다시 돌아오면 값을 확인한 후, Connection 하여 postCheck 을 1 로만듬(미해결)
                 try{
-                new Connection("Uber", "update", "1", "deliverCheck", postList.get(i).getReceiverName(), postList.get(i).getItem()).
+                new Connection("Uber", "update", "1", "deliveryCheck", postList.get(i).getReceiverName(), postList.get(i).getItem()).
                         execute("http://prawnguns.dothome.co.kr/regosterUser.php?").get();
                 } catch (ExecutionException e) {
                     e.printStackTrace();
