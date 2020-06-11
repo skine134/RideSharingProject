@@ -1,9 +1,12 @@
 package com.example.tekbae;
 
-import android.os.AsyncTask;
 
-public class SignCheck extends AsyncTask<String, String, Void> {
+import java.io.Serializable;
+public class SignCheck implements Serializable {
     public int flag;
+    public SignCheck(){
+        this.flag = 0;
+    }
 
     public void setOK(){
         this.flag = 1;
@@ -17,8 +20,4 @@ public class SignCheck extends AsyncTask<String, String, Void> {
         return this.flag;
     }
 
-    @Override
-    protected Void doInBackground(String... strings) {
-        return null;
-    }
 }

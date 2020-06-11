@@ -2,6 +2,7 @@ package com.example.tekbae;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -66,8 +67,16 @@ public class postListAdapter extends BaseAdapter {
             public void onClick(View v) {
                 //서명패드 ON
                 Intent intent = new Intent(context.getApplicationContext(), check_sign.class);
-                intent.putExtra("signOkFlag", 0);
+
+                //SignCheck 클래스 객체 생성 : 서명패드 확인버튼 클릭 유무 확인 용도
+                SignCheck sc = new SignCheck();
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("sc", sc);
+                intent.putExtras(bundle);
+
+
                 context.startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+
                 signBtn.setEnabled(false);
                 PostItem.setText("제품명 : " + postList.get(i).getItem() + "(배송완료)");
 
