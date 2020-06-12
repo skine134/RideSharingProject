@@ -1,7 +1,7 @@
 package com.example.tekbae;
 
+
 import java.io.Serializable;
-@SuppressWarnings("serial")
 public class SignCheck implements Serializable {
     public int flag;
     public SignCheck(){
@@ -19,4 +19,5 @@ public class SignCheck implements Serializable {
     public int getFlag(){
         return this.flag;
     }
+
 }

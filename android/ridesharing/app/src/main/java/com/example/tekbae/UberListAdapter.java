@@ -22,7 +22,6 @@ public class UberListAdapter extends BaseAdapter {
         this.context = context;
         this.UberList = UberList;
     }
-
     public List<Uber> getList(){
         return  UberList;
     }

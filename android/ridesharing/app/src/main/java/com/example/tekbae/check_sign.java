@@ -51,6 +51,7 @@ public class check_sign extends Activity {
         btnOK.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 sc.setOK();
                 finish();
             }
