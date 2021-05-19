@@ -83,7 +83,7 @@ public class postListAdapter extends BaseAdapter {
                 //다시 돌아오면 값을 확인한 후, Connection 하여 postCheck 을 1 로만듬(미해결)
                 try{
                 new Connection("Uber", "update", "1", "deliveryCheck", postList.get(i).getReceiverName(), postList.get(i).getItem()).
-                        execute("http://prawnguns.dothome.co.kr/regosterUser.php?").get();
+                        execute(BuildConfig.SERVER_HOST+"/regosterUser.php?").get();
                 } catch (ExecutionException e) {
                     e.printStackTrace();
                 } catch (InterruptedException e) {

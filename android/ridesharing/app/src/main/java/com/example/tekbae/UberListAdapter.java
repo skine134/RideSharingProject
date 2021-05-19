@@ -88,7 +88,7 @@ public class UberListAdapter extends BaseAdapter {
             public void onCheckedChanged(CompoundButton arg0, boolean isChecked) {
                 if (isChecked){
                     try {
-                       String str= new Connection("Uber","update","1","postCheck",receivername,itemname).execute("http://prawnguns.dothome.co.kr/regosterUser.php?").get();
+                       String str= new Connection("Uber","update","1","postCheck",receivername,itemname).execute(BuildConfig.SERVER_HOST+"/regosterUser.php?").get();
                         Toast.makeText(context,str,Toast.LENGTH_SHORT).show();
                     } catch (ExecutionException e) {
                         e.printStackTrace();
@@ -101,7 +101,7 @@ public class UberListAdapter extends BaseAdapter {
                 else{
 
                     try {
-                        String str= new Connection("Uber","update","0","postCheck",receivername,itemname).execute("http://prawnguns.dothome.co.kr/regosterUser.php?").get();
+                        String str= new Connection("Uber","update","0","postCheck",receivername,itemname).execute(BuildConfig.SERVER_HOST+"/regosterUser.php?").get();
                         Toast.makeText(context,str,Toast.LENGTH_SHORT).show();
                     } catch (ExecutionException e) {
                         e.printStackTrace();
@@ -123,7 +123,7 @@ public class UberListAdapter extends BaseAdapter {
 
                 if (isChecked){
                     try {
-                        String str= new Connection("Uber","update","1","deliveryCheck",receivername,itemname).execute("http://prawnguns.dothome.co.kr/regosterUser.php?").get();
+                        String str= new Connection("Uber","update","1","deliveryCheck",receivername,itemname).execute(BuildConfig.SERVER_HOST+"/regosterUser.php?").get();
                         Toast.makeText(context,str,Toast.LENGTH_SHORT).show();
                     } catch (ExecutionException e) {
                         e.printStackTrace();
@@ -138,7 +138,7 @@ public class UberListAdapter extends BaseAdapter {
                 else{
 
                     try {
-                        String str= new Connection("Uber","update","0","deliveryCheck",receivername,itemname).execute("http://prawnguns.dothome.co.kr/regosterUser.php?").get();
+                        String str= new Connection("Uber","update","0","deliveryCheck",receivername,itemname).execute(BuildConfig.SERVER_HOST+"/regosterUser.php?").get();
                         Toast.makeText(context,str,Toast.LENGTH_SHORT).show();
                     } catch (ExecutionException e) {
                         e.printStackTrace();

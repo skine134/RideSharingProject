@@ -65,10 +65,10 @@ public class RegisterActivity extends AppCompatActivity {
 
 
                 try {
-                    String checkda = new Connection("User","select",idText.getText().toString(),null,null,null).execute("http://prawnguns.dothome.co.kr/regosterUser.php?").get();
+                    String checkda = new Connection("User","select",idText.getText().toString(),null,null,null).execute(BuildConfig.SERVER_HOST+"/regosterUser.php?").get();
                     if(checkda.equals("null")) {
 
-                        new Connection("User", "Insert", inputString, null, null, null).execute("http://prawnguns.dothome.co.kr/regosterUser.php?");
+                        new Connection("User", "Insert", inputString, null, null, null).execute(BuildConfig.SERVER_HOST+"/regosterUser.php?");
                         Toast toast = Toast.makeText(RegisterActivity.this, "회원가입 성공", Toast.LENGTH_LONG);
                         toast.show();
 

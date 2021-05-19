@@ -41,7 +41,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    String outputdata=new Connection("User","select",idText.getText().toString()/*id*/,null,null,null).execute("http://prawnguns.dothome.co.kr/regosterUser.php?").get();
+                    String outputdata=new Connection("User","select",idText.getText().toString()/*id*/,null,null,null).execute(BuildConfig.SERVER_HOST+"/regosterUser.php?").get();
                     String[] arr=outputdata.split(",");
                     if(arr[0].equals(idText.getText().toString()) &&arr[1].equals(passwordText.getText().toString())){
                         if(arr[7].equals("1")){             // 1 is administrator

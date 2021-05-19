@@ -79,7 +79,7 @@ public class uber_commute_select extends AppCompatActivity {
                             try {
                                String result=new Connection("Uber","Insert",",0,,,,0,0,"+
                                        LoginActivity.map.get("UberId")+","+LoginActivity.map.get("UberName")+
-                                       ",0,"+dataset.get(i),null,null,null).execute("http://prawnguns.dothome.co.kr/regosterUser.php?").get();
+                                       ",0,"+dataset.get(i),null,null,null).execute(BuildConfig.SERVER_HOST+"/regosterUser.php?").get();
 
                                 if(result.equals("1"))
                                     Toast.makeText(getApplicationContext(),"일정을 추가했습니다.",Toast.LENGTH_LONG).show();

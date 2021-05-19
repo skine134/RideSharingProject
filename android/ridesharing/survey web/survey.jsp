@@ -4,11 +4,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>°á°ú ÆäÀÌÁö</title>
+<title>ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</title>
 </head>
 <body>
 	<center>
-		<h2>°á°ú</h2>
+		<h2>ï¿½ï¿½ï¿½</h2>
 		<br />
 
 		<%
@@ -20,7 +20,7 @@
 			Class.format("kr.co.dothome.prawnguns");
 			Connection conn = null;
 
-			conn = getConnection("http://prawnguns.dothome.co.kr/distribute.php?", "prawnguns", "tjdwls!1214");
+			conn = getConnection(BuildConfig.SERVER_HOST+"/distribute.php?", "prawnguns", "tjdwls!1214");
 		%>
 	</center>
 </body>

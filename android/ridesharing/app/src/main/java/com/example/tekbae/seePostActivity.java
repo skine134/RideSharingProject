@@ -51,7 +51,7 @@ public class seePostActivity extends AppCompatActivity {
 
 /*<<<<<<< HEAD
         try {
-           String output=new Connection("Uber","select",LoginActivity.map.get("UberName"),null,null,null).execute("http://prawnguns.dothome.co.kr/regosterUser.php?").get();
+           String output=new Connection("Uber","select",LoginActivity.map.get("UberName"),null,null,null).execute(BuildConfig.SERVER_HOST+"/regosterUser.php?").get();
            LoginActivity.map.put("list",output);
            String[] arr=output.split("/");
 =======
@@ -66,7 +66,7 @@ public class seePostActivity extends AppCompatActivity {
         //고객 리스트 DB전체 받아오기
         try {
             output = new Connection("Uber", "select", LoginActivity.map.get("UberId"),null, null, null)
-                    .execute("http://prawnguns.dothome.co.kr/regosterUser.php?").get();
+                    .execute(BuildConfig.SERVER_HOST+"/regosterUser.php?").get();
             LoginActivity.map.put("list",output);
             String[] arr=output.split("/");
             for(int i =0;i<arr.length;i++){

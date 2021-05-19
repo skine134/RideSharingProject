@@ -26,7 +26,7 @@ public class uber_edit extends Activity {
         List<Uber> selected=total_management_menu.selected_list.get("selected");
         String outUber=null;
         try {
-            outUber = new Connection("Uber", "select", null, "All", null, null).execute("http://prawnguns.dothome.co.kr/regosterUser.php?").get();
+            outUber = new Connection("Uber", "select", null, "All", null, null).execute(BuildConfig.SERVER_HOST+"/regosterUser.php?").get();
         } catch (ExecutionException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {
@@ -64,7 +64,7 @@ public class uber_edit extends Activity {
                                     System.out.println(arr2[7] + "," + arr2[8]);
                                     str = new Connection("Uber", "update", arr2[8] + "," + arr2[7],
                                             "Uber", selected.get(j).getUberName(),
-                                            selected.get(j).getDate()).execute("http://prawnguns.dothome.co.kr/regosterUser.php?").get();
+                                            selected.get(j).getDate()).execute(BuildConfig.SERVER_HOST+"/regosterUser.php?").get();
                                     System.out.println(str);
                                 } catch (ExecutionException e) {
                                     e.printStackTrace();

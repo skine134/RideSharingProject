@@ -106,7 +106,7 @@ public class total_management_menu extends AppCompatActivity {
 
         String outUber = null;
         try {
-            outUber = new Connection("Uber", "select", LoginActivity.map.get(""), "All", null, null).execute("http://prawnguns.dothome.co.kr/regosterUser.php?").get();
+            outUber = new Connection("Uber", "select", LoginActivity.map.get(""), "All", null, null).execute(BuildConfig.SERVER_HOST+"/regosterUser.php?").get();
             String[] arr = outUber.split("/");
 
 

@@ -10,7 +10,7 @@ import java.util.Map;
 
         public class RegisterRequest extends StringRequest {
             //서버 URL설정(php파일 연동)
-            final static private String URL = "http://prawnguns.dothome.co.kr/Register.php";
+            final static private String URL = BuildConfig.SERVER_HOST+"/Register.php";
             private Map<String,String> map;
 
             //아이디 비번 이름 나이 주소 전화번호 이메일

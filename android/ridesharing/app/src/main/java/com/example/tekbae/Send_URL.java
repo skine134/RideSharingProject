@@ -77,7 +77,7 @@ public class Send_URL extends AppCompatActivity {
         //고객 리스트 DB전체 받아오기
         try {
             output = new Connection("Uber", "select", date_info, "Date", null, null)
-                    .execute("http://prawnguns.dothome.co.kr/regosterUser.php?").get();
+                    .execute(BuildConfig.SERVER_HOST+"/regosterUser.php?").get();
 
             if(!output.equals("null")) {
                 String arr[] = output.split("/");
@@ -136,7 +136,7 @@ public class Send_URL extends AppCompatActivity {
                 if(output.equals("null")){
                     Toast.makeText(getApplicationContext(), "전송할 고객이 존재하지 않습니다",Toast.LENGTH_SHORT).show();
                 } else {
-                    String Url = "http://prawnguns.dothome.co.kr/survey.html";
+                    String Url = BuildConfig.SERVER_HOST+"/survey.html";
                     SmsManager sms = SmsManager.getDefault();
                     for(int i=0; i<phoneList.length; i++){
                         sms.sendTextMessage(phoneList[i], null, Url, null, null);

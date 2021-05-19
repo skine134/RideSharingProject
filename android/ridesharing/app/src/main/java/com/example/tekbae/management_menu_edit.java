@@ -39,7 +39,7 @@ public class management_menu_edit extends AppCompatActivity {
                 for (int j = 0; j < selected.size(); j++) {
                     try {
                         str = new Connection("Uber", "delete",selected.get(j).getUberId()+","+selected.get(j).getDate(),
-                                null,null,null).execute("http://prawnguns.dothome.co.kr/regosterUser.php?").get();
+                                null,null,null).execute(BuildConfig.SERVER_HOST+"/regosterUser.php?").get();
                     } catch (ExecutionException e) {
                         e.printStackTrace();
                     } catch (InterruptedException e) {
